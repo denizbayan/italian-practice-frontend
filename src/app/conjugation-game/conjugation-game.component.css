@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red-border-class {
+    border: 1.3px solid red;
+    
+}

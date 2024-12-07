@@ -20,7 +20,9 @@
 
 <div class="container justify-content-md-center" *ngIf="is_game_component_visible">
     <div style="padding-top: 5%;" class="row justify-content-center align-items-center">
-        <h2 style="text-align: center;"> Word: {{ is_given_word_singular == true ? selected_word.singolare_nome : selected_word.plurale_nome }}</h2>
+        <h2 style="text-align: center;"> Word: {{ is_given_word_singular == true ? selected_word.singolare_nome : selected_word.plurale_nome }}
+            <i [pTooltip]="selected_word.genere"  class="pi pi-question-circle" style="padding-left: 0.5%;font-size: 1rem;color:lightblue"></i>
+        </h2>
     </div>
     <div *ngIf="is_singular_selected && is_plural_selected" class="row justify-content-center align-items-center">
         <div class = "input_label col">

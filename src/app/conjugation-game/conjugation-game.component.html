@@ -1,0 +1,70 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-auto" >   
+        <label> <p-checkbox [disabled] = "(!is_past_tense_selected && !is_future_tense_selected) || is_check_answers_clicked" [(ngModel)]="is_present_tense_selected"  [binary]="true" inputId="binary" /> Presente </label>
+    </div> 
+    <div class="col-md-auto">   
+        <label> <p-checkbox [disabled] = "(!is_present_tense_selected && !is_future_tense_selected) || is_check_answers_clicked"  [(ngModel)]="is_past_tense_selected" [binary]="true" inputId="binary"/> Passato Prossimo </label>
+    </div> 
+    <div  class="col-md-auto">
+        <label> <p-checkbox [disabled] = "(!is_present_tense_selected && !is_past_tense_selected) || is_check_answers_clicked"  [(ngModel)]="is_future_tense_selected" [binary]="true" inputId="binary"/> Futuro Semplice </label>
+    </div> 
+    <div *ngIf="!is_game_component_visible" style="padding-top:2%;" class="form-group d-flex justify-content-center">
+        <button 
+            pButton (click)="startGame()" class="btn btn-primary btn-block button">Play</button>
+    </div>
+</div>
+
+<div *ngIf="is_game_component_visible" class="justify-content-md-center">
+    <div style="padding-top: 1%;" class="row justify-content-center align-items-center">
+        <h2 style="text-align: center;">Verb: {{ selected_verb.verbo }}</h2>
+    </div>
+    <div class="container justify-content-md-center" >
+        <p-table styleClass = 'p-datatable-sm' #dt [value]="pronomi_soggetto" [tableStyle]="{'min-width': '30rem','max-width': '100%','max-height': '30%'}">
+            <ng-template pTemplate="header">
+                <tr >
+                    <th></th>
+                    <th style="text-align: center;" *ngIf="is_present_tense_selected">Presente</th>
+                    <th style="text-align: center;" *ngIf="is_past_tense_selected">Passato Prossimo</th>
+                    <th style="text-align: center;" *ngIf="is_future_tense_selected">Futuro Semplice</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-pronomi let-i="rowIndex">
+                <tr >
+                    <td>{{pronomi}}</td>
+                    
+                    <td  *ngIf="is_present_tense_selected"> 
+                        <div  style="text-align: center;">
+                            <input  type="text" [(ngModel)]="answers.presente[pronomi]['answer']" autocomplete="off"> 
+                            <i *ngIf="answers.presente[pronomi]['is_correct']&&is_check_answers_clicked" class="pi pi-check-circle" style="font-size: 1rem;color:green"></i>
+                            <i *ngIf="!answers.presente[pronomi]['is_correct']&&is_check_answers_clicked" class="pi pi-times-circle" style="font-size: 1rem;color:red"></i>
+                        
+                        </div>
+                        </td>
+                    <td *ngIf="is_past_tense_selected"> 
+                        <input type="text" [(ngModel)]="answers.passato_prossimo[pronomi]['answer']" autocomplete="off"> 
+                        <i *ngIf="answers.passato_prossimo[pronomi]['is_correct']&&is_check_answers_clicked" class="pi pi-check-circle" style="font-size: 1rem;color:green"></i>
+                        <i *ngIf="!answers.passato_prossimo[pronomi]['is_correct']&&is_check_answers_clicked" class="pi pi-times-circle" style="font-size: 1rem;color:red"></i>
+                    </td>
+                    <td *ngIf="is_future_tense_selected"> 
+                        <input type="text" [(ngModel)]="answers.futuro_semplice[pronomi]['answer']" autocomplete="off"> 
+                        <i *ngIf="answers.futuro_semplice[pronomi]['is_correct']&&is_check_answers_clicked" class="pi pi-check-circle" style="font-size: 1rem;color:green"></i>
+                        <i *ngIf="!answers.futuro_semplice[pronomi]['is_correct']&&is_check_answers_clicked" class="pi pi-times-circle" style="font-size: 1rem;color:red"></i>
+                    </td>
+
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div class="row justify-content-end">
+        <div *ngIf="is_check_answers_clicked" style="padding-top:2%;" class="col-8 form-group d-flex justify-content-center">
+            <button  pButton (click)="finishGame()" class="btn btn-danger btn-block button">Finish</button>
+        </div>
+        <div style="padding-top:2%;" class="col-2 form-group d-flex justify-content-center">
+            <button 
+                pButton (click)="checkAnswers()" class="btn btn-primary btn-block button">Check</button>
+        </div>
+        <div *ngIf="is_check_answers_clicked" style="padding-top:2%;" class="col-2 form-group d-flex justify-content-center">
+            <button  pButton (click)="loadNextWord()" class="btn btn-success btn-block button">Next</button>
+        </div>
+    </div>
+</div>

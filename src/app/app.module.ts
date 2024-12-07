@@ -11,6 +11,7 @@ import { ArticleGameComponent } from './article-game/article-game.component';
 import { ConjugationGameComponent } from './conjugation-game/conjugation-game.component';
 import { DictionaryGameComponent } from './dictionary-game/dictionary-game.component';
 import { FormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
         MenubarModule,
         TabViewModule,
         FormsModule,
-        CheckboxModule
+        CheckboxModule,
+        TableModule
     ],
     providers: [],
     bootstrap: [AppComponent]

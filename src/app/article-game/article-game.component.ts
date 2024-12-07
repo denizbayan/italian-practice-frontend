@@ -11,7 +11,7 @@ export class ArticleGameComponent implements OnInit {
   words : any = [{
     "singolare_nome" : "Libro",
     "plurale_nome" :"Libri",
-    "gendere":"maschile",
+    "genere":"maschile",
     "articolo_determinativo_singolare":"il",
     "articolo_determinativo_plurale":"i",
     "articolo_indeterminativo_singolare":"un",
@@ -21,7 +21,7 @@ export class ArticleGameComponent implements OnInit {
   {
     "singolare_nome" : "Tavolo",
     "plurale_nome" :"Tavoli",
-    "gendere":"maschile",
+    "genere":"maschile",
     "articolo_determinativo_singolare":"il",
     "articolo_determinativo_plurale":"i",
     "articolo_indeterminativo_singolare":"un",
@@ -31,7 +31,7 @@ export class ArticleGameComponent implements OnInit {
   {
     "singolare_nome" : "Amico",
     "plurale_nome" :"Amici",
-    "gendere":"maschile",
+    "genere":"maschile",
     "articolo_determinativo_singolare":"l'",
     "articolo_determinativo_plurale":"gli",
     "articolo_indeterminativo_singolare":"un",
@@ -71,10 +71,6 @@ export class ArticleGameComponent implements OnInit {
   }
 
   checkAnswers(){
-    /***
-     * 
-     * TODO: Check if answers are correct 
-     */
     if(this.is_given_word_singular){
       this.is_singular_or_plural_answer_correct =  this.singular_or_plural_answer.toLowerCase() == this.selected_word.plurale_nome.toLowerCase()
       this.is_definite_article_answer_correct = this.definite_article_answer.toLowerCase() == this.selected_word.articolo_determinativo_singolare.toLowerCase()
