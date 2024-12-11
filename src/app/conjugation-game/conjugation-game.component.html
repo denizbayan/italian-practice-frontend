@@ -16,7 +16,7 @@
 
 <div *ngIf="is_game_component_visible" class="justify-content-md-center">
     <div style="padding-top: 1%;" class="row justify-content-center align-items-center">
-        <h2 style="text-align: center;">Verb: {{ selected_verb.verbo }}</h2>
+        <h2 style="text-align: center;">Verb: {{ selected_verb.verb }}</h2>
     </div>
     <div class="container justify-content-md-center" >
         <p-table styleClass = 'p-datatable-sm' #dt [value]="pronomi_soggetto" [tableStyle]="{'min-width': '30rem','max-width': '100%','max-height': '30%'}">
@@ -30,7 +30,7 @@
             </ng-template>
             <ng-template pTemplate="body" let-pronomi let-i="rowIndex">
                 <tr >
-                    <td>{{pronomi}}</td>
+                    <td>{{pronomi =="lui"? pronomi+"/lei" : pronomi}}</td>
                     
                     <td  *ngIf="is_present_tense_selected"> 
                         <div  style="text-align: center;">

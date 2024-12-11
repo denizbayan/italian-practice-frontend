@@ -1,0 +1,38 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-auto" >   
+        <h1> {{from_language}} <i style="font-size: 2rem" class="pi pi-arrow-right-arrow-left" (click)="switchLanguage()"></i> {{to_language}} </h1>
+    </div> 
+    
+    <div *ngIf="!is_game_component_visible" style="padding-top:2%;" class="form-group d-flex justify-content-center">
+        <button pButton (click)="startGame()" class="btn btn-primary btn-block button">Play</button>
+    </div>
+</div>
+
+<div class="container justify-content-md-center" *ngIf="is_game_component_visible">
+    <div style="padding-top: 5%;" class="row justify-content-center align-items-center">
+        <h2 style="text-align: center;"> Word: {{selected_word[from_language]}}</h2>
+    </div>
+    <div  class="row justify-content-center align-items-center" style="text-align: center;">
+        <div class = "col"> 
+            <input type="text"  name="translation_answer" [(ngModel)] = "answer" autocomplete="off"  (keydown.enter)="checkAnswers()">
+            <i *ngIf="is_check_answers_clicked && is_answer_correct" class="pi pi-check-circle" style="padding-left: 2%;font-size: 1.5rem;color:green"></i>
+            <i *ngIf="is_check_answers_clicked && !is_answer_correct" class="pi pi-times-circle" style="padding-left: 2%;font-size: 1.5rem;color:red"></i>
+        </div>
+    </div>
+    
+        <div class="row justify-content-center" >
+        <div *ngIf="is_check_answers_clicked" style="padding-top:2%;" class="col-2 form-group d-flex justify-content-center">
+            <button  pButton (click)="finishGame()" class="btn btn-danger btn-block button">Finish</button>
+        </div>
+        <div *ngIf="!(is_check_answers_clicked && is_answer_correct)" style="padding-top:2%;" class="col-2 form-group d-flex justify-content-center">
+            <button [disabled]="!answer" 
+                pButton (click)="checkAnswers()" class="btn btn-primary btn-block button">Check</button>
+        </div>
+        <div *ngIf="is_check_answers_clicked" style="padding-top:2%;" class="col-2 form-group d-flex justify-content-center">
+            <button  pButton (click)="loadNextWord()" class="btn btn-success btn-block button">Next</button>
+        </div>
+    </div>
+
+
+
+</div>

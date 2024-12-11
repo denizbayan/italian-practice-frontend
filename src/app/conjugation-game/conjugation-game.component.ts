@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConjugationService } from '../_services/conjugation.service';
 
 @Component({
   selector: 'app-conjugation-game',
@@ -7,38 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConjugationGameComponent  implements OnInit {
 
-  pronomi_soggetto = ["io","tu","lui/lei","noi","voi","loro"]
+  pronomi_soggetto = ["io","tu","lui","noi","voi","loro"]
 
-  verbs : any = [
-    {
-      "verbo":"avere",
-      "conjugations":{
-        "presente":{
-          "io":"ho",
-          "tu":"hai",
-          "lui/lei":"ha",
-          "noi":"abbiamo",
-          "voi":"avete",
-          "loro":"hanno"
-        },"passato_prossimo":{
-          "verbo_ausiliare": "avere",
-          "io":"avuto",
-          "tu":"avuto",
-          "lui/lei":"avuto",
-          "noi":"avuto",
-          "voi":"avuto",
-          "loro":"avuto"
-        },"futuro_semplice":{
-          "io":"avrò",
-          "tu":"avrai",
-          "lui/lei":"avrà",
-          "noi":"avremo",
-          "voi":"avrete",
-          "loro":"avranno"
-        }
-      }
-    }
-  ]
+  verbs : any = ["avere","mangiare","andare","venire","volere" ]
 
   selected_verb : any = {}
 
@@ -56,8 +28,7 @@ export class ConjugationGameComponent  implements OnInit {
   is_game_component_visible = false
   is_check_answers_clicked = false
 
-  indefinite_article_answer= ""
-
+  constructor(private conjugationService: ConjugationService){}
 
   ngOnInit(){
     this.resetInputFields()
@@ -93,7 +64,17 @@ export class ConjugationGameComponent  implements OnInit {
     
     this.resetInputFields()
     this.is_check_answers_clicked = false
-    this.selected_verb = this.verbs[Math.floor(Math.random() * this.verbs.length)]
+    this.selected_verb["verb"] = this.verbs[Math.floor(Math.random() * this.verbs.length)]
+    
+    this.conjugationService.getConjugation(this.selected_verb.verb).subscribe(
+      data=>{
+        this.selected_verb["conjugations"] = data.result.indicativo
+
+      },
+      err => {
+        console.log(err)
+      }
+    )
 
   }
 
@@ -107,7 +88,6 @@ export class ConjugationGameComponent  implements OnInit {
 
   resetInputFields(){
     for(var pronomi of this.pronomi_soggetto){
-      console.log(pronomi)
       this.answers.presente[pronomi] = {"answer":"",is_correct:false}
       this.answers.passato_prossimo[pronomi] = {"answer":"",is_correct:false}
       this.answers.futuro_semplice[pronomi] = {"answer":"",is_correct:false}

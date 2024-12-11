@@ -12,6 +12,7 @@ import { ConjugationGameComponent } from './conjugation-game/conjugation-game.co
 import { DictionaryGameComponent } from './dictionary-game/dictionary-game.component';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { TableModule } from 'primeng/table';
         TabViewModule,
         FormsModule,
         CheckboxModule,
-        TableModule
+        TableModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
