@@ -13,6 +13,8 @@ import { DictionaryGameComponent } from './dictionary-game/dictionary-game.compo
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
+import { DropdownModule } from 'primeng/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
         FormsModule,
         CheckboxModule,
         TableModule,
-        HttpClientModule
+        HttpClientModule,
+        DropdownModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

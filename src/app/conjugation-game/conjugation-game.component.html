@@ -1,4 +1,4 @@
-<div class="row justify-content-md-center">
+<div class="row justify-content-md-center align-items-center">
     <div class="col-md-auto" >   
         <label> <p-checkbox [disabled] = "(!is_past_tense_selected && !is_future_tense_selected) || is_check_answers_clicked" [(ngModel)]="is_present_tense_selected"  [binary]="true" inputId="binary" /> Presente </label>
     </div> 
@@ -8,15 +8,21 @@
     <div  class="col-md-auto">
         <label> <p-checkbox [disabled] = "(!is_present_tense_selected && !is_past_tense_selected) || is_check_answers_clicked"  [(ngModel)]="is_future_tense_selected" [binary]="true" inputId="binary"/> Futuro Semplice </label>
     </div> 
+    <div  class="col-md-auto">
+        <label> <p-dropdown class="dropdown-class" [options]="difficulty_levels" [(ngModel)]="selected_difficulty" optionLabel="label" /> Difficile </label>
+    </div> 
     <div *ngIf="!is_game_component_visible" style="padding-top:2%;" class="form-group d-flex justify-content-center">
         <button 
-            pButton (click)="startGame()" class="btn btn-primary btn-block button">Play</button>
+            pButton (click)="startRound()" class="btn btn-primary btn-block button">Play</button>
     </div>
 </div>
 
 <div *ngIf="is_game_component_visible" class="justify-content-md-center">
     <div style="padding-top: 1%;" class="row justify-content-center align-items-center">
-        <h2 style="text-align: center;">Verb: {{ selected_verb.verb }}</h2>
+        <h2 style="text-align: center;">Verb: {{ selected_verb.verb }}
+            <i [pTooltip]="selected_verb.verb"  class="pi pi-question-circle" style="padding-left: 0.5%;font-size: 1rem;color:lightblue"></i>
+        </h2>
+        
     </div>
     <div class="container justify-content-md-center" >
         <p-table styleClass = 'p-datatable-sm' #dt [value]="pronomi_soggetto" [tableStyle]="{'min-width': '30rem','max-width': '100%','max-height': '30%'}">
@@ -64,7 +70,7 @@
                 pButton (click)="checkAnswers()" class="btn btn-primary btn-block button">Check</button>
         </div>
         <div *ngIf="is_check_answers_clicked" style="padding-top:2%;" class="col-2 form-group d-flex justify-content-center">
-            <button  pButton (click)="loadNextWord()" class="btn btn-success btn-block button">Next</button>
+            <button  pButton (click)="startRound()" class="btn btn-success btn-block button">Next</button>
         </div>
     </div>
 </div>

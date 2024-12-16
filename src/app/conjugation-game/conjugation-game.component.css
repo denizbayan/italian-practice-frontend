@@ -8,3 +8,7 @@
     border: 1.3px solid red;
     
 }
+
+.p-dropdown-items-wrapper ul{
+    padding-left: 0% !important; 
+}
