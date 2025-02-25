@@ -1,76 +1,82 @@
 <div class="row justify-content-md-center">
     <div class="col-md-auto" >   
-        <label> <p-checkbox [disabled] = "!is_plural_selected || is_check_answers_clicked" [(ngModel)]="is_singular_selected"  [binary]="true" inputId="binary" /> Singolare </label>
+        <label> <p-checkbox [disabled] = "!isPluralSelected || isCheckAnswersClicked" [(ngModel)]="isSingularSelected"  [binary]="true" inputId="binary" /> Singolare </label>
     </div> 
     <div class="col-md-auto">   
-        <label> <p-checkbox [disabled] = "!is_singular_selected || is_check_answers_clicked"  [(ngModel)]="is_plural_selected" [binary]="true" inputId="binary"/> Plurale </label>
+        <label> <p-checkbox [disabled] = "!isSingularSelected || isCheckAnswersClicked"  [(ngModel)]="isPluralSelected" [binary]="true" inputId="binary"/> Plurale </label>
     </div> 
     <div  class="col-md-auto">
-        <label> <p-checkbox [disabled] = "!is_indefinite_selected || is_check_answers_clicked"  [(ngModel)]="is_definite_selected" [binary]="true" inputId="binary"/> Determinativo </label>
+        <label> <p-checkbox [disabled] = "!isIndeterminativeSelected || isCheckAnswersClicked"  [(ngModel)]="isdeterminativeSelected" [binary]="true" inputId="binary"/> Determinativo </label>
     </div> 
     <div  class="col-md-auto">   
-        <label> <p-checkbox [disabled] = "!is_definite_selected || is_check_answers_clicked"  [(ngModel)]="is_indefinite_selected" [binary]="true" inputId="binary"/> Indeterminativo </label> 
+        <label> <p-checkbox [disabled] = "!isdeterminativeSelected || isCheckAnswersClicked"  [(ngModel)]="isIndeterminativeSelected" [binary]="true" inputId="binary"/> Indeterminativo </label> 
     </div> 
     
-    <div *ngIf="!is_game_component_visible" style="padding-top:2%;" class="form-group d-flex justify-content-center">
-        <button [disabled]="!is_singular_selected && !is_plural_selected && !is_definite_selected && !is_indefinite_selected" 
-            pButton (click)="startGame()" class="btn btn-primary btn-block button">Play</button>
+    <div *ngIf="!isGameComponentVisible" style="padding-top:2%;" class="form-group d-flex justify-content-center">
+        <button [disabled]="!isAuthenticated || (!isSingularSelected && !isPluralSelected && !isdeterminativeSelected && !isIndeterminativeSelected)" 
+             (click)="startGame()" class="btn btn-primary btn-block button">Play</button>
     </div>
 </div>
 
-<div class="container justify-content-md-center" *ngIf="is_game_component_visible">
-    <div style="padding-top: 5%;" class="row justify-content-center align-items-center">
-        <h2 style="text-align: center;"> Word: {{ is_given_word_singular == true ? selected_word.singolare_nome : selected_word.plurale_nome }}
-            <i [pTooltip]="selected_word.genere"  class="pi pi-question-circle" style="padding-left: 0.5%;font-size: 1rem;color:lightblue"></i>
+<div class="container justify-content-md-center" *ngIf="isGameComponentVisible">
+    <div style="padding-top: 2%;" class="row justify-content-center align-items-center">
+        <h2 style="text-align: center;"> Parola #{{roundCounter}}
         </h2>
     </div>
-    <div *ngIf="is_singular_selected && is_plural_selected" class="row justify-content-center align-items-center">
-        <div class = "input_label col">
-            {{ is_given_word_singular == true ? 'Plurale' : 'Singolare' }}
+    <div style="padding-top: 2%;" class="row justify-content-center align-items-center">
+        <h2 style="text-align: center;"> Word: {{ isSelectedWordSingular == true ? selectedWord.italianNameSingular : selectedWord.italianNamePlural }}
+            <i [pTooltip]="selectedWord.gender"  class="pi pi-question-circle" style="padding-left: 0.5%;font-size: 1rem;color:lightblue"></i>
+        </h2>
+    </div>
+    <div *ngIf="isSingularSelected && isPluralSelected" class="row justify-content-center align-items-center">
+        <div class = "inputLabel col">
+            {{ isSelectedWordSingular == true ? 'Plurale' : 'Singolare' }}
         </div>
         <div class = "col"> 
-            <input type="text"  name="definite_article" [(ngModel)] = "singular_or_plural_answer" autocomplete="off">
-            <i *ngIf="is_check_answers_clicked && is_singular_or_plural_answer_correct" class="pi pi-check-circle" style="padding-left: 2%;font-size: 1.5rem;color:green"></i>
-            <i *ngIf="is_check_answers_clicked && !is_singular_or_plural_answer_correct" class="pi pi-times-circle" style="padding-left: 2%;font-size: 1.5rem;color:red"></i>
+            <input type="text"  name="determinativeArticle" [(ngModel)] = "singularOrPluralAnswer" autocomplete="off">
+            <i *ngIf="isCheckAnswersClicked && isSingularOrPluralAnswerCorrect" class="pi pi-check-circle" style="padding-left: 2%;font-size: 1.5rem;color:green"></i>
+            <i *ngIf="isCheckAnswersClicked && !isSingularOrPluralAnswerCorrect" class="pi pi-times-circle" style="padding-left: 2%;font-size: 1.5rem;color:red"></i>
         </div>
     </div>
-    <div *ngIf="is_definite_selected" class="row justify-content-center align-items-center">
-        <div class = "input_label col">
+    <div *ngIf="isdeterminativeSelected" class="row justify-content-center align-items-center">
+        <div class = "inputLabel col">
             Articolo Determinativo
         </div>
         <div class = "col"> 
-            <input type="text"  name="definite_article" [(ngModel)] = "definite_article_answer" autocomplete="off">
-            <i *ngIf="is_check_answers_clicked  && is_definite_article_answer_correct" class="pi pi-check-circle" style="padding-left: 2%;font-size: 1.5rem;color:green"></i>
-            <i *ngIf="is_check_answers_clicked  && !is_definite_article_answer_correct" class="pi pi-times-circle" style="padding-left: 2%;font-size: 1.5rem;color:red"></i>
+            <input type="text"  name="determinativeArticle" [(ngModel)] = "determinativeArticleAnswer" autocomplete="off">
+            <i *ngIf="isCheckAnswersClicked  && isDeterminativeArticleAnswerCorrect" class="pi pi-check-circle" style="padding-left: 2%;font-size: 1.5rem;color:green"></i>
+            <i *ngIf="isCheckAnswersClicked  && !isDeterminativeArticleAnswerCorrect" class="pi pi-times-circle" style="padding-left: 2%;font-size: 1.5rem;color:red"></i>
         </div>
     </div>
-    <div *ngIf="is_indefinite_selected" class="row justify-content-center align-items-center">
-        <div class = "input_label col">
+    <div *ngIf="isIndeterminativeSelected" class="row justify-content-center align-items-center">
+        <div class = "inputLabel col">
             Articolo Indeterminativo
         </div>
         <div class = "col"> 
-            <input type="text"  name="indefinite_article" [(ngModel)] = "indefinite_article_answer" autocomplete="off"> 
-            <i *ngIf="is_check_answers_clicked && is_indefinite_article_answer_correct" class="pi pi-check-circle" style="padding-left: 2%;font-size: 1.5rem;color:green"></i>
-            <i *ngIf="is_check_answers_clicked && !is_indefinite_article_answer_correct" class="pi pi-times-circle" style="padding-left: 2%;font-size: 1.5rem;color:red"></i>
+            <input type="text"  name="indeterminativeArticle" [(ngModel)] = "indeterminativeArticleAnswer" autocomplete="off"> 
+            <i *ngIf="isCheckAnswersClicked && isIndeterminativeArticleAnswerCorrect" class="pi pi-check-circle" style="padding-left: 2%;font-size: 1.5rem;color:green"></i>
+            <i *ngIf="isCheckAnswersClicked && !isIndeterminativeArticleAnswerCorrect" class="pi pi-times-circle" style="padding-left: 2%;font-size: 1.5rem;color:red"></i>
         </div>
     </div>
 
-    <div class="row justify-content-end">
-        <div *ngIf="is_check_answers_clicked" style="padding-top:2%;" class="col-8 form-group d-flex justify-content-center">
+    <div class="row justify-content-md-center" >
+        
+        <div *ngIf="isCheckAnswersClicked" style="padding-top:2%;" class="col-md-auto form-group d-flex justify-content-center">
             <button  pButton (click)="finishGame()" class="btn btn-danger btn-block button">Finish</button>
         </div>
-        <div style="padding-top:2%;" class="col-2 form-group d-flex justify-content-center">
+        <div style="padding-top:2%;" class="col-md-auto form-group d-flex justify-content-center">
+            <button  pButton (click)="showAnswers();sendShowAnswersEvent()" class="btn btn-success btn-block button">Show Answers</button>
+        </div>
+        <div style="padding-top:2%;" class="col-md-auto form-group d-flex justify-content-center">
             <button [disabled]="
-                (is_singular_selected && is_plural_selected && singular_or_plural_answer == '') || 
-                (is_definite_selected && definite_article_answer == '' ) ||
-                (is_indefinite_selected && indefinite_article_answer == '' )"  
-                pButton (click)="checkAnswers()" class="btn btn-primary btn-block button">Check</button>
+                (isSingularSelected && isPluralSelected && singularOrPluralAnswer == '') || 
+                (isdeterminativeSelected && determinativeArticleAnswer == '' ) ||
+                (isIndeterminativeSelected && indeterminativeArticleAnswer == '' )"  
+                pButton (click)="checkAnswers();sendCheckAnswersEvent()" class="btn btn-primary btn-block button">Check</button>
         </div>
-        <div *ngIf="is_check_answers_clicked" style="padding-top:2%;" class="col-2 form-group d-flex justify-content-center">
-            <button  pButton (click)="loadNextWord()" class="btn btn-success btn-block button">Next</button>
+        <div *ngIf="isCheckAnswersClicked" style="padding-top:2%;" class="col-md-auto form-group d-flex justify-content-center">
+            <button  pButton (click)="loadNextRound()" class="btn btn-success btn-block button">Next</button>
         </div>
+
     </div>
-
-
-
 </div>

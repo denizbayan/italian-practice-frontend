@@ -1,5 +1,4 @@
 .container{
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -11,4 +10,8 @@
 
 .p-dropdown-items-wrapper ul{
     padding-left: 0% !important; 
+}
+
+th, tr{
+    text-align: center !important;
 }

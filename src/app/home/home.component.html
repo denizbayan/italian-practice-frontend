@@ -1,19 +1,12 @@
-
-<header>
-    <div>
-        <p>Welcome to Italian Practice Games!</p>
-        <p>Choose Your Game To Play</p>
-    </div>
-</header>
-
-
 <p-tabView styleClass="tabview-custom">
     <p-tabPanel header="Gli Articoli">
         <ng-template pTemplate="header">
             <span> Gli Articoli</span>
         </ng-template>
         <ng-template pTemplate="body">
-            <app-article-game/>
+            <div style="align-items: center;">
+                <app-article-game />
+            </div>
         </ng-template>
     </p-tabPanel>
     <p-tabPanel header="Coniugazione">
@@ -21,7 +14,9 @@
             <span> Coniugazione</span>
         </ng-template>
         <ng-template pTemplate="body">
-            <app-conjugation-game/>
+            <div style="align-items: center;">
+                <app-conjugation-game/>
+            </div>
         </ng-template>
     </p-tabPanel>
     <p-tabPanel header="Dizionario">
@@ -29,7 +24,9 @@
             <span> Dizionario</span>
         </ng-template>
         <ng-template pTemplate="body">
-            <app-dictionary-game/>
+            <div style="align-items: center;">
+                <app-dictionary-game/>
+            </div>
         </ng-template>
     </p-tabPanel>
 </p-tabView>

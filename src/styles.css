@@ -12,3 +12,7 @@ body {
 ol, ul {
     padding-left: 0% !important;
 }
+
+a {
+    text-decoration: none !important;
+}

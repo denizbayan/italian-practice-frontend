@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-center align-items-center "> 
+  
+  <article class="card-body signin " style="border-radius: 1.25em;" >
+    <p-button routerLink="/" icon="pi pi-arrow-left" [rounded]="true" [text]="true" label="Home" />
+    <div > <h2 class="text-bold d-flex justify-content-center" > Login</h2></div>
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <input type="text" class="form-control" name="email" placeholder="E-mail" [(ngModel)]="form.email" required #email="ngModel" >
+        <small class="p-error" role="alert" *ngIf="f.submitted && email.invalid">Enter valid e-mail adress !</small>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="form.password" required minlength="7" />
+      </div>
+      <div class="form-group"> 
+        <div class="checkbox  d-flex justify-content-between">
+          <label> <input [(ngModel)]="form.rememberMe" name="rememberMe" type="checkbox">Remember Me</label>
+          <a  routerLink="/resetPassword">Forget My Password</a>
+        </div> <!-- checkbox .// -->
+      </div> <!-- form-group// -->  
+
+      <div class="form-group d-flex justify-content-center">
+        <button [disabled]="!f.form.valid" class="btn btn-secondary btn-block button">Login</button>
+      </div>
+      <div class="form-group  d-flex justify-content-center" > 
+        <a [routerLink]="['/signup']" class="text-bold">Click to Register</a>
+      </div>
+      <div class="form-group">
+        <small class="p-error" role="alert" *ngIf="f.submitted">
+          {{errorMessage}}
+        </small>
+      </div>                                             
+    </form>
+  </article>
+</div>

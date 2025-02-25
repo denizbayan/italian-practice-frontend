@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-center align-items-center">
+  <article class="card-body signup" style="border-radius: 1.25em;" >
+    <p-button routerLink="/" icon="pi pi-arrow-left" [rounded]="true" [text]="true" label="Home" />
+    <div > <h2 class="text-bold d-flex justify-content-center" >Sign Up</h2></div>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="ngPersonalInfoForm.form.valid && onSubmit()" #ngPersonalInfoForm="ngForm" novalidate>
+      <div class="form-group">
+        <input [ngClass]="{'red-border-class': username.errors&&ngPersonalInfoForm.submitted}" type="email" class="form-control" placeholder="E-mail" name="email" [(ngModel)]="form.email" required #email="ngModel"/>
+      </div>
+      <div class="form-group">
+        <input [ngClass]="{'red-border-class': username.errors&&ngPersonalInfoForm.submitted}" type="text" class="form-control" placeholder="Username" name="username" [(ngModel)]="form.username" required minlength="1" maxlength="50" #username="ngModel"/>
+      </div>
+      <div class="form-group">
+        <input [ngClass]="{'red-border-class': username.errors&&ngPersonalInfoForm.submitted}" type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="form.password" required minlength="8" #password="ngModel"/>
+        <small class="p-error" role="alert" *ngIf="password.hasError('minlength')" >Password Must Be Longer Than 8 Characters</small>
+      </div>
+
+      <div class="form-group  d-flex justify-content-center" >  </div>
+      <div class="form-group d-flex justify-content-center form-button">
+        <button  [disabled]="!ngPersonalInfoForm.form.valid" class="btn btn-secondary btn-block button">Create Account</button>
+      </div>
+      <div  class="form-group  d-flex justify-content-center" > 
+        <a [routerLink]="['/signin']" class="text-bold">Click to Login</a>
+      </div>
+
+      <div class="alert alert-warning" *ngIf="ngPersonalInfoForm.submitted && isSignUpFailed">
+        Sign Up Failed<br />
+        <span *ngFor="let item of errorMessage"> {{item}}<br/></span>
+      </div>                                            
+    </form>
+  <div class="alert alert-success" *ngIf="isSuccessful">Sign Up Successful</div>
+  </article>
+</div>

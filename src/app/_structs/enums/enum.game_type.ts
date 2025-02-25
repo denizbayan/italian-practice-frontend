@@ -1,0 +1,5 @@
+export enum EnumGameType{
+    ARTICLE ="ARTICLE" ,
+    CONJUGATION = "CONJUGATION",
+    DICTIONARY = "DICTIONARY"
+}

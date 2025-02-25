@@ -1,0 +1,55 @@
+<p-table  #dt [value]="tableData" selectionMode="single" [(selection)]="selectedDate" (onRowSelect)="openDateDetails()">
+    <ng-template pTemplate="caption">
+        <div class="align-items-center justify-content-center justify-content-between flex flex-row  ">
+            <h5 class="p-m-0">Game History</h5>
+            <button pButton pRipple  icon="pi pi-refresh" tooltipPosition="left" pTooltip="Refresh" 
+                class="refresh-button-border p-button-danger p-button-text p-button-rounded" (click)="getData()"></button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Date</th>
+            <th>Games Played</th>
+            <th>Success Rate (%)</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-event>
+        <tr [pSelectableRow]="event">
+            <td>{{ event.Date }} </td>
+            <td>{{ event.Count }}</td>
+            <td>{{ event.averageSuccessRate| number:'.2-2' }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+
+
+<p-chart type="line" [data]="chartData" [options]="chartOptions" class="h-[30rem]" />
+
+
+<p-dialog [(visible)]="showDateDetails" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}"
+    header="Header" [modal]="true"  (onHide)="closeDateDetails()" styleClass="p-fluid">
+    <p-table  #dt [value]="selectedDateEvents">
+        <ng-template pTemplate="caption">
+            <div class="align-items-center justify-content-center justify-content-between flex flex-row  ">
+                <h5 class="p-m-0">Date: {{selectedDate.Date}}</h5>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Word</th>
+                <th>Success Rate (%)</th>
+                <th>Duration (s)</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-event>
+            <tr>
+                <td>{{ event.word.italianNameSingular }}</td>
+                <td>{{ 100*event.successRate| number:'.2-2' }}</td>
+                <td>{{ (event.endAt - event.startAt)/1000| number:'.2-2' }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-dialog>
+
+

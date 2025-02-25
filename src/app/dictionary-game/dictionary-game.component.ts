@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-dictionary-game',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DictionaryGameComponent implements OnInit {
 
-  from_language = "Italian"
-  to_language = "English"
+  isAuthenticated = false
 
-  is_game_component_visible = false
-  is_check_answers_clicked = false
+  fromLanguage = "Italian"
+  toLanguage = "English"
 
-  is_answer_correct = false
+  isGameComponentVisible = false
+  isCheckAnswersClicked = false
+
+  isAnswerCorrect = false
 
   answer =  ""
 
@@ -45,41 +48,50 @@ export class DictionaryGameComponent implements OnInit {
     }
   ]
 
-  selected_word : any = {}
+  selectedWord : any = {}
+
+  constructor(private authService: AuthService){}
+
 
   ngOnInit(): void {
-    this.resetInputFields()
-
-    
+    if (this.tokenValidation$) {
+      this.tokenValidation$.subscribe((isValid) => {
+        console.log(isValid)
+        this.isAuthenticated = isValid?true:false
+      });
+    }
   }
 
+  get tokenValidation$() {
+    return this.authService.tokenValidation$!;
+  }
   startGame(){
-    this.is_game_component_visible=true
+    this.isGameComponentVisible=true
     this.loadNextWord()
   }
 
   checkAnswers(){
     
-    this.is_check_answers_clicked = true 
-    this.is_answer_correct = (this.selected_word[this.to_language] == this.answer)
+    this.isCheckAnswersClicked = true 
+    this.isAnswerCorrect = (this.selectedWord[this.toLanguage] == this.answer)
 
   }
 
   loadNextWord(){
     
     this.resetInputFields()
-    this.is_check_answers_clicked = false
+    this.isCheckAnswersClicked = false
     var index  =Math.floor(Math.random() * this.words.length)
     console.log(index)
-    this.selected_word = this.words[index]
+    this.selectedWord = this.words[index]
 
   }
 
   finishGame(){
 
     this.resetInputFields()
-    this.is_game_component_visible = false
-    this.selected_word = {}
+    this.isGameComponentVisible = false
+    this.selectedWord = {}
 
   }
 
@@ -88,9 +100,9 @@ export class DictionaryGameComponent implements OnInit {
   }
 
   switchLanguage(){
-    var tmp = this.from_language
-    this.from_language = this.to_language
-    this.to_language = tmp
+    var tmp = this.fromLanguage
+    this.fromLanguage = this.toLanguage
+    this.toLanguage = tmp
   }
 
 }

@@ -1,5 +1,13 @@
-import { LowerCasePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { WordService } from '../_services/word.service';
+import { TokenStorageService } from '../_services/token-storage.service';
+import { EnumSessionStorageKeys } from '../_structs/enums/enum.session_storage_keys';
+import { EventService } from '../_services/event.service';
+import { EnumGameType } from '../_structs/enums/enum.game_type';
+import { EnumEventName } from '../_structs/enums/enum.event_name';
+import { AuthService } from '../_services/auth.service';
+import { DatePipe } from '@angular/common';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-article-game',
@@ -8,110 +16,207 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleGameComponent implements OnInit {
 
-  words : any = [{
-    "singolare_nome" : "Libro",
-    "plurale_nome" :"Libri",
-    "genere":"maschile",
-    "articolo_determinativo_singolare":"il",
-    "articolo_determinativo_plurale":"i",
-    "articolo_indeterminativo_singolare":"un",
-    "articolo_indeterminativo_plurale":"dei",
-    "livello" : "A1"
-  },
-  {
-    "singolare_nome" : "Tavolo",
-    "plurale_nome" :"Tavoli",
-    "genere":"maschile",
-    "articolo_determinativo_singolare":"il",
-    "articolo_determinativo_plurale":"i",
-    "articolo_indeterminativo_singolare":"un",
-    "articolo_indeterminativo_plurale":"dei",
-    "livello" : "A1"
-  },
-  {
-    "singolare_nome" : "Amico",
-    "plurale_nome" :"Amici",
-    "genere":"maschile",
-    "articolo_determinativo_singolare":"l'",
-    "articolo_determinativo_plurale":"gli",
-    "articolo_indeterminativo_singolare":"un",
-    "articolo_indeterminativo_plurale":"degli",
-    "livello" : "A1"
-  }
-] 
+  isAuthenticated = false
 
-  is_singular_selected = true
-  is_plural_selected = false
-  is_definite_selected = true
-  is_indefinite_selected = false
+  words : any = [] 
 
-  singular_or_plural_answer = ""
-  definite_article_answer = ""
-  indefinite_article_answer = ""
+  isSingularSelected = true
+  isPluralSelected = false
+  isdeterminativeSelected = true
+  isIndeterminativeSelected = false
 
-  is_singular_or_plural_answer_correct = false
-  is_definite_article_answer_correct = false
-  is_indefinite_article_answer_correct = false
+  singularOrPluralAnswer = ""
+  determinativeArticleAnswer = ""
+  indeterminativeArticleAnswer = ""
 
-  is_game_component_visible = false
-  is_check_answers_clicked = false
+  isSingularOrPluralAnswerCorrect = false
+  isDeterminativeArticleAnswerCorrect = false
+  isIndeterminativeArticleAnswerCorrect = false
 
-  is_given_word_singular = false
+  isGameComponentVisible = false
+  isCheckAnswersClicked = false
 
-  selected_word : any = {}
+  isSelectedWordSingular = false
+
+  selectedWord : any = {}
+
+  roundCounter = 0
+  attemptCounter = 1
+
+  attemptStartAt = 0
+  attemptEndAt = 0
+
+  constructor(private authService: AuthService,private tokenStorageService: TokenStorageService,private eventService: EventService,private wordService: WordService,private datePipe: DatePipe){}
+
   ngOnInit(): void {
-
-
-
-  }
-
-  startGame(){
-    this.is_game_component_visible=true
-    this.loadNextWord()
-  }
-
-  checkAnswers(){
-    if(this.is_given_word_singular){
-      this.is_singular_or_plural_answer_correct =  this.singular_or_plural_answer.toLowerCase() == this.selected_word.plurale_nome.toLowerCase()
-      this.is_definite_article_answer_correct = this.definite_article_answer.toLowerCase() == this.selected_word.articolo_determinativo_singolare.toLowerCase()
-      this.is_indefinite_article_answer_correct = this.indefinite_article_answer.toLowerCase() == this.selected_word.articolo_indeterminativo_singolare.toLowerCase()
-    }else{
-      this.is_singular_or_plural_answer_correct = this.singular_or_plural_answer.toLowerCase() == this.selected_word.singolare_nome.toLowerCase()
-      this.is_definite_article_answer_correct = this.definite_article_answer.toLowerCase() == this.selected_word.articolo_determinativo_plurale.toLowerCase()
-      this.is_indefinite_article_answer_correct = this.indefinite_article_answer.toLowerCase() == this.selected_word.articolo_indeterminativo_plurale.toLowerCase()
+    if (this.tokenValidation$) {
+      this.tokenValidation$.subscribe((isValid) => {
+        console.log(isValid)
+        this.isAuthenticated = isValid?true:false
+      });
     }
-    this.is_check_answers_clicked = true 
+  }
+
+  get tokenValidation$() {
+    return this.authService.tokenValidation$!;
+  }
+
+  async startGame(){
+    await this.fetchWordsAsync(true)
+    console.log("finished")
+    this.isGameComponentVisible=true
+    this.loadNextRound()
+
+  }
+
+  async fetchWordsAsync(waitToFinish: boolean){
+    if(waitToFinish){
+      try {
+        this.words = await firstValueFrom(this.wordService.getWord("A1"));
+        console.log("fetched");
+      } catch (err) {
+        console.log(err);
+      }
+    }else{
+      this.wordService.getWord("A1").subscribe(
+        data=>{
+          this.words.push(...data)
+        },
+        err => {
+          console.log(err)
+        }
+      )
+    }
+
+  }
+
+  loadNextRound(){
+    this.roundCounter++
+    if(this.roundCounter % 10 == 0 ){
+      this.fetchWordsAsync(false)
+    }
+
+    this.clearInputFields()
+    this.loadNextWord()
+    this.attemptCounter = 1
+    this.attemptStartAt = (new Date).getTime();
   }
 
   loadNextWord(){
     
-    this.resetInputFields()
-    this.is_check_answers_clicked = false
-    this.selected_word = this.words[Math.floor(Math.random() * this.words.length)]
-
-    if (this.is_singular_selected && this.is_plural_selected){
-      if(Math.random() > 0.5){
-        this.is_given_word_singular = true
-      }else{
-        this.is_given_word_singular = false
-      }
+    this.isCheckAnswersClicked = false
+    this.selectedWord = this.words[this.roundCounter-1]
+    if (this.isSingularSelected && this.isPluralSelected){
+        this.isSelectedWordSingular = Math.random() > 0.5
     }else{
-      this.is_given_word_singular = this.is_singular_selected
+      this.isSelectedWordSingular = this.isSingularSelected
+    }
+  }
+  
+  clearInputFields(){
+    this.singularOrPluralAnswer = ""
+    this.determinativeArticleAnswer = ""
+    this.indeterminativeArticleAnswer = ""
+  }
+
+  checkAnswers(){
+    if(this.isSelectedWordSingular){
+      this.isSingularOrPluralAnswerCorrect =  this.singularOrPluralAnswer.toLowerCase() == this.selectedWord.italianNamePlural.toLowerCase()
+      this.isDeterminativeArticleAnswerCorrect = this.determinativeArticleAnswer.toLowerCase() == this.selectedWord.determinativeArticleSingular.toLowerCase()
+      this.isIndeterminativeArticleAnswerCorrect = this.indeterminativeArticleAnswer.toLowerCase() == this.selectedWord.indeterminativeArticleSingular.toLowerCase()
+    }else{
+      this.isSingularOrPluralAnswerCorrect = this.singularOrPluralAnswer.toLowerCase() == this.selectedWord.italianNameSingular.toLowerCase()
+      this.isDeterminativeArticleAnswerCorrect = this.determinativeArticleAnswer.toLowerCase() == this.selectedWord.determinativeArticlePlural.toLowerCase()
+      this.isIndeterminativeArticleAnswerCorrect = this.indeterminativeArticleAnswer.toLowerCase() == this.selectedWord.indeterminativeArticlePlural.toLowerCase()
+    }
+    this.isCheckAnswersClicked = true 
+    this.attemptEndAt = (new Date).getTime();
+    
+  }
+
+  sendCheckAnswersEvent(){
+    var eventJSON : any = {}
+
+    eventJSON["eventName"] = EnumEventName.CHECK_ANSWERS
+    eventJSON["userID"] = parseInt(this.tokenStorageService.getItem(EnumSessionStorageKeys.USER_ID)) 
+    eventJSON["sessionID"] = this.tokenStorageService.getItem(EnumSessionStorageKeys.SESSION_ID)
+    eventJSON["wordID"] = this.selectedWord.id
+    eventJSON["gameType"] = EnumGameType.ARTICLE
+    eventJSON["attemptCount"] = this.attemptCounter
+    eventJSON["correctAnswerCount"] = this.countCorrectAnswers()
+    eventJSON["totalAnswerCount"] = this.countTotalAnswers()
+    eventJSON["successRate"] = this.countCorrectAnswers() / this.countTotalAnswers()
+    eventJSON["eventDateStr"] = this.datePipe.transform(new Date(), 'yyyy-MM-dd') || '';
+    eventJSON["startAt"] = this.attemptStartAt
+    eventJSON["endAt"] = this.attemptEndAt
+    eventJSON["paramsJSON"] =JSON.stringify({
+      "isSingularSelected":this.isSingularSelected,
+      "isPluralSelected":this.isPluralSelected,
+      "isdeterminativeSelected":this.isdeterminativeSelected,
+      "isIndeterminativeSelected":this.isIndeterminativeSelected,
+      "singularOrPluralAnswer":this.singularOrPluralAnswer,
+      "determinativeArticleAnswer":this.determinativeArticleAnswer,
+      "indeterminativeArticleAnswer":this.indeterminativeArticleAnswer,
+      "isSingularOrPluralAnswerCorrect":this.isSingularOrPluralAnswerCorrect,
+      "isDeterminativeArticleAnswerCorrect":this.isDeterminativeArticleAnswerCorrect,
+      "isIndeterminativeArticleAnswerCorrect":this.isIndeterminativeArticleAnswerCorrect,
+      "isSelectedWordSingular":this.isSelectedWordSingular,
+      "isCheckAnswersClicked":this.isCheckAnswersClicked,
+      "selectedWord":JSON.stringify(this.selectedWord)
+    }) 
+
+    this.eventService.sendEvent(eventJSON).subscribe()
+
+
+    if(this.countCorrectAnswers() != this.countTotalAnswers()){
+      this.attemptStartAt = (new Date).getTime();
+      this.attemptCounter++
+    } 
+    
+  }
+
+  countCorrectAnswers():number{
+    var correctAnswersCount = 0
+
+    if(this.isSingularOrPluralAnswerCorrect) correctAnswersCount++
+    if(this.isDeterminativeArticleAnswerCorrect)correctAnswersCount++
+    if(this.isIndeterminativeArticleAnswerCorrect)correctAnswersCount++
+
+    return correctAnswersCount
+  }
+
+  countTotalAnswers():number{
+    var selectedFieldsCount = 0
+    
+    if(this.isSingularSelected && this.isPluralSelected)selectedFieldsCount++
+    if(this.isdeterminativeSelected)selectedFieldsCount++
+    if(this.isIndeterminativeSelected)selectedFieldsCount++
+
+    return selectedFieldsCount
+  }
+
+  sendShowAnswersEvent(){
+
+  }
+
+  showAnswers(){
+    if(this.isSelectedWordSingular){
+      this.singularOrPluralAnswer = this.selectedWord.italianNamePlural.toLowerCase()
+      this.determinativeArticleAnswer = this.selectedWord.determinativeArticleSingular.toLowerCase()
+      this.indeterminativeArticleAnswer = this.selectedWord.indeterminativeArticleSingular.toLowerCase()
+    }else{
+      this.singularOrPluralAnswer = this.selectedWord.italianNameSingular.toLowerCase()
+      this.determinativeArticleAnswer = this.selectedWord.determinativeArticlePlural.toLowerCase()
+      this.indeterminativeArticleAnswer = this.selectedWord.indeterminativeArticlePlural.toLowerCase()
     }
   }
 
   finishGame(){
 
-    this.resetInputFields()
-    this.is_game_component_visible = false
-    this.selected_word = {}
+    this.clearInputFields()
+    this.isGameComponentVisible = false
+    this.selectedWord = {}
 
-  }
-
-  resetInputFields(){
-    this.singular_or_plural_answer = ""
-    this.definite_article_answer = ""
-    this.indefinite_article_answer = ""
   }
 
 }
