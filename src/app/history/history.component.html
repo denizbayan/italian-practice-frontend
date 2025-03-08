@@ -1,10 +1,18 @@
-<p-table  #dt [value]="tableData" selectionMode="single" [(selection)]="selectedDate" (onRowSelect)="openDateDetails()">
+<p-table  #dt [value]="tableData[selectedGameType]" selectionMode="single" [(selection)]="selectedDate" (onRowSelect)="openDateDetails()">
     <ng-template pTemplate="caption">
         <div class="align-items-center justify-content-center justify-content-between flex flex-row  ">
             <h5 class="p-m-0">Game History</h5>
+            <p-selectButton 
+            [options]="gameTypeOptions" 
+            [(ngModel)]="selectedGameType" 
+            optionLabel="label" 
+            optionValue="value"
+            />
             <button pButton pRipple  icon="pi pi-refresh" tooltipPosition="left" pTooltip="Refresh" 
                 class="refresh-button-border p-button-danger p-button-text p-button-rounded" (click)="getData()"></button>
         </div>
+        
+
     </ng-template>
     <ng-template pTemplate="header">
         <tr>
@@ -24,7 +32,7 @@
 
 
 
-<p-chart type="line" [data]="chartData" [options]="chartOptions" class="h-[30rem]" />
+<p-chart type="line" [data]="chartData[selectedGameType]" [options]="chartOptions" class="h-[30rem]" />
 
 
 <p-dialog [(visible)]="showDateDetails" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}"

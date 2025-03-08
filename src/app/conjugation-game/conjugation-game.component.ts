@@ -8,6 +8,7 @@ import { EnumSessionStorageKeys } from '../_structs/enums/enum.session_storage_k
 import { EnumGameType } from '../_structs/enums/enum.game_type';
 import { EventService } from '../_services/event.service';
 import { DatePipe } from '@angular/common';
+import { VerbConjugationDTO } from '../_structs/dto/verb_conjugation_dto';
   
 interface Tense {
   optionLabel :string,
@@ -26,7 +27,7 @@ interface Tense {
 
 export class ConjugationGameComponent  implements OnInit {
 
-  pronomiSoggetto = ["io","tu","lui","noi","voi","loro"]
+  subjectPronouns = ["io","tu","lui","noi","voi","loro"]
 
   verbs : any = [
     {"italian":"essere", "english":"to be"},
@@ -192,52 +193,29 @@ accendere – to light/to switch on
   isGameComponentVisible = false
   isCheckAnswersClicked = false
 
-  answers : any = {
-    "indicativo":{
-      "presente":{},
-      "passatoProssimo":{},
-      "imperfetto":{},
-      "futuroSemplice" :{}
-    },
-    "condizionale":{
-      "presente":{},
-      "passato":{}
-    },
-    "congiuntivo":{
-      "presente":{},
-      "passato":{},
-      "imperfetto":{}
-    },
-    "imperativo":{
-      "presente":{}
-    },
-    "gerundio":{
-      "presente":{},
-      "passato":{}
-    }
-  }
+  answers : any = {}
 
   IndicativoTenses: Tense[] =[
-    {optionLabel: "Presente", answersLabel : "Indicativo Presente",code: "indicativo_presente","mood":"indicativo","tense":"presente"},
-    {optionLabel: "Passato Prossimo", answersLabel : "Indicativo Passato Prossimo",code: "indicativo_passatoProssimo","mood":"indicativo","tense":"passatoProssimo"},
-    {optionLabel: "Imperfetto", answersLabel : "Indicativo Imperfetto",code: "indicativo_imperfetto","mood":"indicativo","tense":"imperfetto"},
-    {optionLabel: "Futuro Semplice", answersLabel : "Indicativo Futuro Semplice",code: "indicativo_futuroSemplice","mood":"indicativo","tense":"futuroSemplice"}
+    {optionLabel: "Presente", answersLabel : "Indicativo Presente",code: "indicativo_presente",mood:"Indicativo",tense:"Presente"},
+    {optionLabel: "Passato Prossimo", answersLabel : "Indicativo Passato Prossimo",code: "indicativo_passatoProssimo",mood:"Indicativo",tense:"PassatoProssimo"},
+    {optionLabel: "Imperfetto", answersLabel : "Indicativo Imperfetto",code: "indicativo_imperfetto",mood:"Indicativo",tense:"Imperfetto"},
+    {optionLabel: "Futuro Semplice", answersLabel : "Indicativo Futuro Semplice",code: "indicativo_futuroSemplice",mood:"Indicativo",tense:"FuturoSemplice"}
   ];
   CondizionaleTenses: Tense[] =[
-    {optionLabel: "Presente", answersLabel : "Condizionale Presente",code: "condizionale_presente","mood":"condizionale","tense":"presente"},
-    {optionLabel: "Passato", answersLabel : "Condizionale Passato",code: "condizionale_passato","mood":"condizionale","tense":"passato"}
+    {optionLabel: "Presente", answersLabel : "Condizionale Presente",code: "condizionale_presente",mood:"Condizionale",tense:"Presente"},
+    {optionLabel: "Passato", answersLabel : "Condizionale Passato",code: "condizionale_passato",mood:"Condizionale",tense:"Passato"}
   ];
   CongiuntivoTenses: Tense[] =[
-    {optionLabel: "Presente", answersLabel : "Congiuntivo Presente",code: "congiuntivo_presente","mood":"congiuntivo","tense":"presente"},
-    {optionLabel: "Passato", answersLabel : "Congiuntivo Passato",code: "congiuntivo_passato","mood":"congiuntivo","tense":"passato"},
-    {optionLabel: "Imperfetto", answersLabel : "Congiuntivo Imperfetto",code: "congiuntivo_imperfetto","mood":"congiuntivo","tense":"imperfetto"}
+    {optionLabel: "Presente", answersLabel : "Congiuntivo Presente",code: "congiuntivo_presente",mood:"Congiuntivo",tense:"Presente"},
+    {optionLabel: "Passato", answersLabel : "Congiuntivo Passato",code: "congiuntivo_passato",mood:"Congiuntivo",tense:"Passato"},
+    {optionLabel: "Imperfetto", answersLabel : "Congiuntivo Imperfetto",code: "congiuntivo_imperfetto",mood:"Congiuntivo",tense:"Imperfetto"}
   ];
   ImperativoTenses: Tense[] =[
-    {optionLabel: "Presente", answersLabel : "Imperativo Presente",code: "imperativo_presente","mood":"imperativo","tense":"presente"},
+    {optionLabel: "Presente", answersLabel : "Imperativo Presente",code: "imperativo_presente",mood:"Imperativo",tense:"Presente"},
   ];
   GerundioTenses: Tense[] =[
-    {optionLabel: "Presente", answersLabel : "Gerundio Presente",code: "gerundio_presente","mood":"gerundio","tense":"presente"},
-    {optionLabel: "Passato", answersLabel : "Gerundio Passato",code: "gerundio_passato","mood":"gerundio","tense":"passato"}
+    {optionLabel: "Presente", answersLabel : "Gerundio Presente",code: "gerundio_presente",mood:"Gerundio",tense:"Presente"},
+    {optionLabel: "Passato", answersLabel : "Gerundio Passato",code: "gerundio_passato",mood:"Gerundio",tense:"Passato"}
   ];
 
   selectedIndicativoTenses: Tense[] = []
@@ -258,6 +236,8 @@ accendere – to light/to switch on
 
 
   isAuthenticated = false
+
+  verbConjugations : VerbConjugationDTO[] =[];
 
   constructor(private datePipe: DatePipe,private eventService: EventService,private tokenStorageService: TokenStorageService, private authService: AuthService,private conjugationService: ConjugationService){}
 
@@ -285,7 +265,6 @@ accendere – to light/to switch on
     this.allSelectedTenses.push(...this.selectedImperativoTenses)
     this.allSelectedTenses.push(...this.selectedGerundioTenses)
 
-
     this.isGameComponentVisible=true
     this.resetInputFields()
     this.loadNextWord()
@@ -295,23 +274,14 @@ accendere – to light/to switch on
     
     this.isCheckAnswersClicked = true 
 
-    for (var mood of Object.keys(this.answers)) {
-      if( (mood =="indicativo" && this.selectedIndicativoTenses.length == 0) || 
-          (mood =="condizionale" && this.selectedCondizionaleTenses.length == 0) ||
-          (mood =="congiuntivo" && this.selectedCongiuntivoTenses.length == 0) || 
-          (mood =="imperativo" && this.selectedImperativoTenses.length == 0) || 
-          (mood =="gerundio" && this.selectedGerundioTenses.length == 0)){
-          continue
-      }
-      for(var pronomi of this.pronomiSoggetto){    
-        for (var mood of Object.keys(this.answers)) {
-          for(var tense of Object.keys(this.answers[mood]) ){
-            console.log(this.answers[mood][tense][pronomi]["answer"] + " vs " + this.selectedVerb["conjugations"][mood][tense][pronomi])
-            this.answers[mood][tense][pronomi]["isCorrect"] = (this.answers[mood][tense][pronomi]["answer"] === this.selectedVerb["conjugations"][mood][tense][pronomi])
-          }
-        }
-      }
-    }
+    this.allSelectedTenses.forEach(tenseInfo => {
+      for(var pronoun of this.subjectPronouns){
+        var mood = tenseInfo.mood
+        var tense = tenseInfo.tense
+        this.answers[mood][tense][pronoun]["isCorrect"] = 
+            (this.answers[mood][tense][pronoun]["answer"] === this.selectedVerb["conjugations"][mood][tense][pronoun])
+      }    
+    })
     
     this.attemptEndAt = (new Date).getTime();
   }
@@ -322,7 +292,23 @@ accendere – to light/to switch on
     
     this.conjugationService.getConjugation(this.selectedVerb.verb.italian).subscribe(
       data=>{
-        this.selectedVerb["conjugations"] = data.result
+        this.verbConjugations = data
+        let conjugationJSON:any = {}
+        this.verbConjugations.forEach(verbConjugation =>{
+          if(!conjugationJSON[verbConjugation.mood]){
+            conjugationJSON[verbConjugation.mood] = {}
+          }
+          if(!conjugationJSON[verbConjugation.mood][verbConjugation.tense]){
+            conjugationJSON[verbConjugation.mood][verbConjugation.tense] = {}
+          }
+          Object.keys(verbConjugation.conjugationDict).forEach(pronoun =>{
+            conjugationJSON[verbConjugation.mood][verbConjugation.tense][pronoun] = verbConjugation.conjugationDict[pronoun]
+          })
+
+        })
+        
+        this.selectedVerb["conjugations"] = conjugationJSON
+
         this.addDifficultyBasedHints()
       },
       err => {
@@ -342,27 +328,36 @@ accendere – to light/to switch on
 
   resetInputFields(){
     this.isCheckAnswersClicked = false
-    for(var pronomi of this.pronomiSoggetto){    
-      for (var mood of Object.keys(this.answers)) {
-        for(var tense of Object.keys(this.answers[mood]) ){
-          this.answers[mood][tense][pronomi] =  {"answer":"",isCorrect:false}
-        }
+
+    this.allSelectedTenses.forEach(tense => {
+      
+      if(!this.answers[tense.mood]){
+        this.answers[tense.mood] = {}
       }
-    }
+      if(!this.answers[tense.mood][tense.tense]){
+        this.answers[tense.mood][tense.tense] = {}
+      }
+      for(var pronoun of this.subjectPronouns){
+        this.answers[tense.mood][tense.tense][pronoun] =  {"answer":"",isCorrect:false, isHint: false}
+      }
+    })
+    
   }
 
   addDifficultyBasedHints(){
-    for (var mood of Object.keys(this.answers)) {
-      for (var tense of Object.keys(this.answers[mood])) {
-        var pronomiSoggettoCopy = ["io","tu","lui","noi","voi","loro"]
-        for (var i = 0 ; i< this.selectedDifficulty.hintCount ; i++){
-            var pronomi = pronomiSoggettoCopy[Math.floor(Math.random() * pronomiSoggettoCopy.length)]
-            this.answers[mood][tense][pronomi]["answer"]  =  this.selectedVerb["conjugations"][mood][tense][pronomi]
-            this.answers[mood][tense][pronomi]["isCorrect"] = true
-            pronomiSoggettoCopy = pronomiSoggettoCopy.filter(p => (p != pronomi))
-        }
+
+    this.allSelectedTenses.forEach(selectedTense => {
+      var subjectPronounCopy = ["io","tu","lui","noi","voi","loro"]
+      for (var i = 0 ; i< this.selectedDifficulty.hintCount ; i++){
+          var pronoun = subjectPronounCopy[Math.floor(Math.random() * subjectPronounCopy.length)]
+          var mood = selectedTense.mood
+          var tense = selectedTense.tense
+          this.answers[mood][tense][pronoun]["answer"]  =  this.selectedVerb["conjugations"][mood][tense][pronoun]
+          this.answers[mood][tense][pronoun]["isCorrect"] = true
+          this.answers[mood][tense][pronoun]["isHint"] = true
+          subjectPronounCopy = subjectPronounCopy.filter(p => (p != pronoun))
       }
-    }
+    })
 
     if (this.selectedDifficulty.hintCount == 6){
       this.checkAnswers()
@@ -370,14 +365,14 @@ accendere – to light/to switch on
   }
 
   showAnswers(){
-    for(var pronomi of this.pronomiSoggetto){    
-      for (var mood of Object.keys(this.answers)) {
-        for(var tense of Object.keys(this.answers[mood]) ){
-          this.answers[tense][pronomi]["isCorrect"] = true
-          this.answers[mood][tense][pronomi]["answer"] = this.selectedVerb["conjugations"][mood][tense][pronomi]
-        }
-      }
-    }
+    this.allSelectedTenses.forEach(tenseInfo => {
+      for(var pronoun of this.subjectPronouns){
+        var mood = tenseInfo.mood
+        var tense = tenseInfo.tense
+        this.answers[mood][tense][pronoun]["isCorrect"] = true
+        this.answers[mood][tense][pronoun]["answer"] = this.selectedVerb["conjugations"][mood][tense][pronoun]
+      }    
+    })
   }
 
   sendCheckAnswersEvent(){
@@ -413,13 +408,21 @@ accendere – to light/to switch on
   countCorrectAnswers():number{
     var correctAnswersCount = 0
 
+    this.allSelectedTenses.forEach(tenseInfo => {
+      for(var pronoun of this.subjectPronouns){
+        var mood = tenseInfo.mood
+        var tense = tenseInfo.tense
+        if(this.answers[mood][tense][pronoun]["isCorrect"] && !this.answers[mood][tense][pronoun]["isHint"]){
+          correctAnswersCount++
+        }
+      }    
+    })
+    
     return correctAnswersCount
   }
 
   countTotalAnswers():number{
-    var selectedFieldsCount = 0
-    
-    return selectedFieldsCount
+    return (this.subjectPronouns.length - this.selectedDifficulty.hintCount)* this.allSelectedTenses.length
   }
 
   sendShowAnswersEvent(){

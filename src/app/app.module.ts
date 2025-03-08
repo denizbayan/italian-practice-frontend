@@ -27,6 +27,7 @@ import { ChartModule } from 'primeng/chart';
 import { DialogModule } from 'primeng/dialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 
 @NgModule({
@@ -58,7 +59,9 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
         ChartModule,
         DialogModule,
         MultiSelectModule,
-        ScrollPanelModule
+        ScrollPanelModule,
+        SelectButtonModule
+        
     ],
     providers: [authInterceptorProviders,DatePipe],
     bootstrap: [AppComponent]
