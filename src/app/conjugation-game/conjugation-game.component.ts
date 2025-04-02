@@ -322,6 +322,7 @@ accendere – to light/to switch on
 
     this.resetInputFields()
     this.isGameComponentVisible = false
+    this.wordCounter = 0 
     this.selectedVerb = {}
 
   }

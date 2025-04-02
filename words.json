@@ -1,0 +1,224 @@
+
+{
+    "A1":{
+        "nouns":[
+            {
+                "italiano_singolare_nome" : "Albergo",
+                "inglese_singolare_nome" : ["Hotel"],
+                "italiano_plurale_nome" :"Alberghi",
+                "inglese_plurale_nome" : ["Hotels"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"l'",
+                "articolo_determinativo_plurale":"gli",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"degli"
+            },
+            {
+                "italiano_singolare_nome" : "Bagno",
+                "inglese_singolare_nome" : ["Bath","Bathroom"],
+                "italiano_plurale_nome" :"Alberghi",
+                "inglese_plurale_nome" : ["Baths","Bathrooms"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Parcheggio",
+                "inglese_singolare_nome" : ["Parking lot"],
+                "italiano_plurale_nome" :"Parcheggi",
+                "inglese_plurale_nome" : ["Parking lots"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Televisore",
+                "inglese_singolare_nome" : ["Television"],
+                "italiano_plurale_nome" :"Televisori",
+                "inglese_plurale_nome" : ["Televisions"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Portacenere",
+                "inglese_singolare_nome" : ["Ashtray"],
+                "italiano_plurale_nome" :"Posacenere",
+                "inglese_plurale_nome" : ["Ashtrays"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Tavolo",
+                "inglese_singolare_nome" : ["Table"],
+                "italiano_plurale_nome" :"Tavoli",
+                "inglese_plurale_nome" : ["Tables"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Palazzo",
+                "inglese_singolare_nome" : ["Building","Palace"],
+                "italiano_plurale_nome" :"Palazzi",
+                "inglese_plurale_nome" : ["Buildings","Palaces"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Quartiere",
+                "inglese_singolare_nome" : ["Quarter","District"],
+                "italiano_plurale_nome" :"Quartieri",
+                "inglese_plurale_nome" : ["Quarters","Districts"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Garage",
+                "inglese_singolare_nome" : ["Garage"],
+                "italiano_plurale_nome" :"Garage",
+                "inglese_plurale_nome" : ["Garages"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Frigobar",
+                "inglese_singolare_nome" : ["Minibar"],
+                "italiano_plurale_nome" :"Frigobar",
+                "inglese_plurale_nome" : ["Minibars"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Letto",
+                "inglese_singolare_nome" : ["Bed"],
+                "italiano_plurale_nome" :"Letti",
+                "inglese_plurale_nome" : ["Beds"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Cuscino",
+                "inglese_singolare_nome" : ["Pillow"],
+                "italiano_plurale_nome" :"Cuscini",
+                "inglese_plurale_nome" : ["Pillows"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Termosifone",
+                "inglese_singolare_nome" : ["Radiator"],
+                "italiano_plurale_nome" :"Termosifoni",
+                "inglese_plurale_nome" : ["Radiators"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Sapone",
+                "inglese_singolare_nome" : ["Soap"],
+                "italiano_plurale_nome" :"Saponi",
+                "inglese_plurale_nome" : ["Soaps"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+            {
+                "italiano_singolare_nome" : "Garage",
+                "inglese_singolare_nome" : ["Garage"],
+                "italiano_plurale_nome" :"Garage",
+                "inglese_plurale_nome" : ["Garages"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei"
+            },
+
+
+
+
+
+
+
+            {
+                "italiano_singolare_nome" : "Albergo",
+                "inglese_singolare_nome" : ["Hotel"],
+                "italiano_plurale_nome" :"Alberghi",
+                "inglese_plurale_nome" : ["Hotels"],
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"l'",
+                "articolo_determinativo_plurale":"gli",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"degli"
+            },
+            {
+                "italiano_singolare_nome" : "Amico",
+                "inglese_singolare_nome" : "Friend",
+                "italiano_plurale_nome" :"Amici",
+                "inglese_plurale_nome" : "Friends",
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"l'",
+                "articolo_determinativo_plurale":"gli",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"degli"
+            },
+            {
+                "italiano_singolare_nome" : "Libro",
+                "inglese_singolare_nome" : "Book",
+                "italiano_plurale_nome" :"Libri",
+                "inglese_plurale_nome" : "Books",
+                "genere":"maschile",
+                "articolo_determinativo_singolare":"il",
+                "articolo_determinativo_plurale":"i",
+                "articolo_indeterminativo_singolare":"un",
+                "articolo_indeterminativo_plurale":"dei",
+                "livello" : "A1"
+            }
+        ],
+        "adjectives":[
+            
+        ],
+        "others":[
+        ]
+    },
+
+    "A2":[],
+    "B1":[],
+    "B2":[],
+    "C1":[],
+    "C2":[]
+}

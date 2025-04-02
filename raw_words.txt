@@ -1,0 +1,739 @@
+***NOUNS
+l' albero,gli alberi:tree,trees
+l' armadio,gli armadi:wardrobe,wardrobes
+l' asciugacapelli,gli asciugacapelli:hair dryer,hair dryers
+l' asciugamano,gli asciugamani:towel,towels
+l' aria condizionata,null null:air-conditioning,null
+la lampada,le lampade:lamp,lamps
+la sedia,le sedie:chair,chairs
+la camera singola,le camere singole:single room,single rooms
+la camera doppia,le camere doppie:twin room,twin rooms
+la camera matrimoniale,le camere matrimoniali:double room,double rooms
+la coperta,le coperte:blanket,blankets
+la valigia,le valigie:suitcase,suitcases
+la lavatrice,le lavatrici:washing machine,washing machines
+la doccia,le docce:shower,showers
+la campagna,le campagne:countryside,countrysides
+la villa,le ville:villa/residence,villas/residences
+la colazione,le colazioni:breakfast,breakfasts
+la cappella,le cappelle:chapel,chapels
+la vacanza,le vacanze:holiday,holidays
+la saponetta,le saponette:soap bar,soap bars
+la carta igienica,le carte igieniche:toilet paper,toilet papers
+l' aspetto,gli aspetti:appearance,appearances
+l' occhio,gli occhi:eye,eyes
+null null,gli occhiali:null,glasses
+il naso,i nasi:nose,noses
+il sorriso,i sorrisi:smile,smiles
+l' orecchio,le orecchie:ear,ears
+l' orecchino,gli orecchini:earing,earings
+il capello,i capelli:hair,hair
+la barba,le barbe:beard,beards
+il baffo,i baffi:moustache,moustache
+la casa,le case:house,houeses
+il monolocale,i monolocali:studio flat,studio flats
+l' appartamento,gli appartamenti:apartment,apartments
+l' attico,gli attici:penthouse,penthouses
+il condominio,i condomini:condominium,condominiums
+il peperone,i peperoni:pepper,peppers
+il pomodoro,i pomodori:tomato,tomatoes
+la zucchina,le zucchine:zucchini,zucchini
+il cetriolo,i cetrioli:cucumber,cucumbers
+la cipolla,le cipolle:onion,onions
+l' oliva,le olive:olive,olives
+il broccolo,i broccoli:broccoli,broccoli
+il fagiolo,i fagioli:bean,beans
+la patata,le patate:potato,potatoes
+la carota,le carote:carrot,carrots
+il fungo,i funghi:mushroom,mushrooms
+la zucca,le zucche:pumpkin,pumpkins
+l' insalata,le insalate:salad,salads
+la fragola,le fragole:strawberry,strawberries
+il limone,i limoni:lemon,lemons
+l' arancia,le arance:orange,oranges
+la banana,le banane:banana,bananas
+la ciliegia,le ciliegie:cherry,cherries
+la pesca,le pesche:peach,peaches
+il lampone,i lamponi:raspberry,raspberries
+la bacca,le bacche:berry,berries
+la pera,le pere:pear,pears
+la prugna,le prugne:plum,plums
+la bibita,le bibite:drink,drinks
+il caffè,i caffè:coffee,coffees
+il tè,i tè:tea,teas
+la mela,le mele:apple,apples
+il succo,i succhi:juice,juices
+la spremuta,le spremute:fresh fruit juice,fresh fruit juices
+lo spumante,gli spumanti:sparkling wine,sparkling wines
+il vino bianco,i vini bianchi:white wine,white wines
+il vino rosso,i vini rossi:red wine,red wines
+il cornetto,i cornetti:croissant,croissants
+lo strudel,gli strudel:strudel,strudels
+il dessert,i dessert:desserts
+la carne,le carni:meat,meats
+il pesce,i pesci:fish,fish
+il tonno,i tonni:tuna,tuna
+il pollo,i polli:chicken,chicken
+il prosciutto,i prosciutti:ham,hams
+la salsiccia,le salsicce:sausage,sausages
+lo spaghetto,gli spaghetti:spaghetti,spaghetti
+la tagliatella,le tagliatelle:tagliatelle,tagliatelle
+la lasagna,le lasagne:lasagne,lasagne
+il toast,i toast:toasted sandwich,sandwiches
+il formaggio,i formaggi:cheese,cheeses
+la marmellata,le marmellate:jam,jams
+il brodo,i brodi:soup,soups
+la farina,le farine:flour,flours
+l' uovo,le uova:egg,eggs
+il gelato,i gelati:icecream,icecreams
+la torta,le torte:cake,cakes
+la panna,le panne:cream,creams
+il divano,i divani:sofa,sofas
+il forno,i forni:oven,ovens
+la doccia,le docce:shower,showers
+la scrivania,le scrivanie:desk,desks
+la palestra,le palestre:gym,gyms
+la lavastoviglie,le lavastoviglie:dishwasher,dishwashers
+il lavandino,i lavandini:sink,sinks
+il letto,i letti:bed,beds
+la libreria,le librerie:bookcase,bookcases
+il fornello,i fornelli:stove,stoves
+il rubinetto,i rubinetti:tap,taps
+il comodino,i comodini:nightstand,nightstands
+la poltrona,le poltrone:armchair,armchairs
+la coperta,le coperte:blanket,blankets
+il frigorifero,i frigoriferi:refrigerator,refrigerators
+il portapenne,i portapenne:penholder,penholders
+la vasca,le vasce:bathtub,bathtubs
+il luogo,i luoghi:place,Places
+il pasto,i pasti:meal,meals
+il piatto,i piatti:dish/plate,dishes/plates
+la ricetta,le ricette:recipe,recipes
+l' alimento,gli alimenti:foodstuff,foodstuffs
+il prodotto,i prodotti:product,products
+la verdura,le verdure:vegetable,vegetables
+il frutto,la frutta:fruit,fruits
+il panino,i panini:roll/sandwich,rolls/sandwiches
+il pane,i pani:bread,breads
+la panna,le panne:cream,creams
+il biscotto,i biscotti:biscuit,biscuits
+il burro,i burri:butter,butters
+il prosciutto cotto:cooked ham
+il prosciutto crudo:cured ham
+la bistecca,le bistecche:steak,steaks
+il salame,i salami:salami,salamis
+il miele,i mieli:honey,honeys
+lo zucchero,gli zuccheri:sugar,sugars
+il sale,i sali:salt,salts
+il cocomero,i cocomeri:watermelon,watermelons
+la castagna,le castagne:chestnut,chestnuts
+il mandarino,i mandarini:mandarin,mandarins
+la carne macinata,le carni macinate:minced meat,minced meats
+lo yogurt,gli yogurt:yoghurt,yoghurts
+la famiglia,le famiglie:family,families
+il matrimonio,i matrimoni:marriage,marriages
+il parente,i parenti:relative,relatives
+la quantità,le quantità:quantity,quantities
+il genitore,i genitori:parent,parents
+la madre,le madri:mother,mothers
+il padre,i padri:father,fathers
+il figlio,i figli:son,sons/children
+la figlia,le figlie:daughter,daughters
+il patrigno,i patrigni:stepfather,stepfathers
+la matrigna,le matrigne:stepmother,stepmothers
+il figliastro,i figliastri:stepson,stepsons/stepchildren
+la figliastra,le figliastre:stepdaughter,stepdaughters
+il marito,i mariti:husband,husbands
+la moglie,le mogli:wife,wifes
+il suocero,i suoceri:father-in-law,fathers-in-law/parents-in-law
+la suocera,le suocere:mother-in-law,mothers-in-law
+il genero,i generi:son-in-law,sons-in-law/children-in-law
+la nuora,le nuore:daughter-in-law,daughters-in-law
+il fratello,i fratelli:brother,brothers/siblings
+la sorella,le sorelle:sister,sisters
+lo zio,gli zii:uncle,uncles/aunts
+la zia,le zie:aunt,aunts
+il cugino,i cugini:cousin,cousins
+la cugina,le cugine:cousin,cousins
+il nonno,i nonni:grandfather,grandfathers/grandparents
+la nonna,le nonne:grandmother,grandmothers
+il nipote,i nipoti:nephew/grandson,nephews/grandchildren
+la nipote,le nipoti:niece/granddaughter,nieces/granddaughters
+il cognato,i cognati:brother-in-law,brothers-in-law
+la cognata,le cognate:sister-in-law,sisters-in-law
+il tavolo,i tavoli:table,tables
+la camera,le camere:room/bedroom,rooms/bedrooms
+il braccio,le braccia:arm,arms
+il dito,le dita:finger,fingers
+il ginocchio,le ginocchia:knee,knees
+il labbro,le labbra:lip,lips
+l' attività,le attività:activity,activities
+il giardino,i giardini:garden,gardens
+la passeggiata,le passeggiate:walk,walks
+la musica,le musiche:music,musics
+il fine settimana,i fine settimana:weekend,weekends
+la settimana,le settimane:week,weeks
+la sera,le sere:evening,evenings
+la discoteca,le discoteche:disco,discos
+il teatro,i teatri:theater,theaters
+la domanda,le domande:question,questions
+il francobollo,i francobolli:stamp,stamps
+il soldo,i soldi:money,money
+la torre,le torri:tower,towers
+la canzone,le canzoni:song,songs
+il fumetto,i fumetti:comic,comics
+il filmo giallo,i film gialli:crime film,crime films
+la piscina,le piscine:swimming pool,swimming pools
+il ballo,i balli:dance,dances
+la spesa,le spese:shopping/cost,shoppings/costs
+il bidet,i bidet:bidet,bidets
+il water,i water:toilet,toilets
+la cucina,le cucine:kitchen,kitchens
+il lavello,i lavelli:sink,sinks
+il tappeto,i tappeti:carpet,carpets
+il cestino,i cestini:trashcan,trashcans
+il computer,i computer:computer,computers
+la sala,le sale:hall/room,halls/rooms
+il soggiorno,i soggiorni:living room,living rooms
+la pianta,le piante:plant,plants
+il cibo,i cibi:food,foods
+lo spincaio,gli spinaci:spinach,spinach
+la lattuga,le lattughe:lettuce,lettuces
+la rucola,le rucole:rocket,rockets
+l' aglio,gli agli:garlic,garlics
+il mais:sweetcorn
+l' uva,l' uva:grape,grapes
+l' ananas,gli ananas:pineapple,pineapples
+il ghiaccio,i ghiacci:ice,ices
+l' acqua,le acque:water,waters
+il latte,null null:milk,null
+il riso,i risi:rice,rices
+la pentola,le pentole:pot,pots
+il coperchio,i coperchi:lid,lids
+la padella,le padelle:pan,pans
+il mestolo,i mestoli:ladle,ladles
+il colino,i colini:colander,colanders
+il matterello,i matterelli:rolling pin,rolling pins
+il cavatappi,i cavatappi:corkscrew,corkscrews
+il vassoio,i vassoi:tray,trays
+la ciotola,le ciotole:bowl,bowls
+la posata,le posate:cutlery,cutleries
+il cucchiaio,i cucchiai:spoon,spoons
+il cucchiaino,i cucchiaini:tea spoon,tea spoons
+la forchetta,le forchette:fork,forks
+il coltello,i coltelli:knife,knifes
+il bicchiere,i bicchieri:glass,glasses
+il piatto,i piatti:plate,plates
+la vacanza,le vacanze:holiday,holidays
+l' autobus,gli autobus:bus,buses
+la fermata,le fermate:bus stop,bus stops
+la ferrovia,le ferrovie:railway,railways
+la vasca,le vasche:tub,tubs
+lo scivolo,gli scivoli:slide,slides
+l' altalena,le altalene:swing,swings
+la statua,le statue:statue,statues
+il dintorno,i dintorni:surrounding,surroundings
+il fango,i fanghi:mud,muds
+l' escursione,gli escursioni:excursion,excursions
+la tappa,le tappe:stage,stages
+la cartolina,le cartoline:postcard,postcard
+il viaggio,i viaggi:journey,journeys
+il convento,i conventi:convent,convents
+l' idea,le idee:idea,ideas
+la partenza,le partenze:departure,departures
+la sosta,le soste:stop,stops
+il volo,i voli:flight,flights
+l' alloggio,gli alloggi:accommodation,accommodations
+il servizio,i servizi:service,services
+il reparto,i reparti:department,departments
+la cura,le cure:treatment,treatments
+il massaggio,i massaggio:massage,massages
+la sauna,le saune:sauna,saunas
+la dieta,le diete:diet,diets
+la guida,le guide:direction/guide,directions/guides
+il corpo,i corpi:body,bodies
+il silenzio,i silenzi:silence,silences
+la natura,le nature:nature,natures
+la giornata,le giornate:day,days
+la mattina,le mattine:morning,mornings
+il pomeriggio,i pomeriggi:afternoon,afternoons
+il cratere,i crateri:crater,craters
+lo spettacolo,gli spettacoli:show,shows
+la spiaggia,le spiagge:beach,beaches
+la barca,le barche:boat,boats
+il vaporetto,i vaporetti:ferry boat,ferry boats
+il bacio,i baci:kiss,kisses
+la tenda,le tende:tent,tents
+il sole,i soli:sun,suns
+lo schema,gli scheme:outline/plan,outlines/plans
+la volta,le volte:time,times
+il passato,i passati:past,pasts
+la pinacoteca,le pinacoteche:art gallery,art galleries
+l' abitudine,gli abitudini:habit,habits
+l' abitante,gli abitanti:inhabitant,inhabitants
+il vigneto,i vigneti:vineyard,vineyards
+il giorno,i giorni:day,days
+il lunedì,i lunedì:Monday,Mondays
+il martedì,i martedì:Tuesday,Tuesdays
+il mercoledì,i mercoledì:Wednesday,Wednesdays
+il giovedì,i giovedì:Thursday,Thursdays
+il venerdì,i venerdì:Friday,Fridays
+il sabato,i sabati:Saturday,Saturdays
+la domenica,le domeniche:Sunday,Sundays
+il mese,i mesi:month,months
+il Gennaio,null null:January,null
+il Febbraio,null null:February,null
+il Marzo,null null:March,null
+l' Aprile,null null:April,null
+il Maggio,null null:May,null
+il Giugno,null null:June,null
+il Luglio,null null:July,null
+l' Agosto,null null:August,null
+il Settembre,null null:September,null
+l' Ottobre,null null:October,null
+il Novembre,null null:November,null
+il Dicembre,null null:December,null
+l' ufficio,gli uffici:office,office
+l' ospedale,gli ospedali:hospital,hospitals
+il negozio,i negozi:shop,shops
+la scuola,le scuole:school,schools
+il bar,i bar:bar,bars
+la fabbrica,le fabbriche:factory,factories
+la banca,le banche:bank,banks
+il cantiere,i cantieri:yard,yards
+la panetteria,le panetterie:bakery,bakeries
+la neve,le nevi:snow,snows
+il sole,i soli:sun,suns
+il vento,i venti:wind,winds
+la nebbia,le nebbie:fog,fogs
+la nuvola,le nuvole:cloud,clouds
+il panificio,i panifici:bakery,bakeries
+la pescheria,le pescherie:fishmonger,fishmongers
+la profumeria,le profumerie:perfumery,perfumeries
+il supermercato,i supermercati:supermarket,supermarkets
+la salumeria,le salumerie:delicatessen,delicatessens
+la macelleria,le macellerie:butcher,butchers
+la tabaccheria,le tabaccherie:tobacconist,tobacconists
+la farmacia,le farmacie:chemist,chemists
+il panettiere,i panettieri:baker,bakers
+il barbiere,i barbieri:barber,barbers
+la parrucchiera,le parrucchiere:hairdresser,hairdressers
+il giornalaio,i giornalai:newsagent,newsagents
+il giornalista,i giornalisti:journalist,journalists
+il tabaccaio,i tabaccai:tobacconist,tobacconists
+il meccanico,i meccanici:mechanic,mechanics
+il medico,i medici:doctor,doctors
+il veterinario,i veterinari:vet,vets
+il muratore,i muratori:bricklayer,bricklayers
+il fruttivendolo,i fruttivendoli:greengrocer,greengrocers
+il contadino,i contadini:farmer,farmers
+il libraio,i librai:bookseller,booksellers
+il macellaio,i macellai:butcher,butchers
+il falegname,i falegnami:carpenter,carpenters
+il pescivendolo,i pescivendoli:fishmonger,fishmongers
+il gioielliere,i gioiellieri:jeweler,jewelers
+l' insegnante,gli insegnanti:teacher,teachers
+il catarro,i catarri:catarrh,catarrhs
+la febbre,le febbri:fever,fevers
+la medicina,le medicine:medicine,medicines
+la farmacia,le farmacie:pharmacy,pharmacies
+il raffreddore,i raffreddori:cold,colds
+la tosse,le tosse:cough,coughs
+il banco,i banchi:desk,desks
+l' elettricista,gli elettricisti:electrician,electricians
+la lavagna,le lavagne:board,boards
+il quaderno,i quaderni:notebook,notebooks
+la classe,le classi:class,classes
+il libro,i libri:book,books
+la mensa,le mense:canteen,canteens
+la penna,le penne:pen,pens
+la matita,le matite:pencil,pencils
+l' ora,le ore:hour,hours
+il mezzogiorno,i mezzogiorni:midday,middays
+la mezzanotte,le mezzanotte:midnight,midnights
+il mare,i mari:sea,seas
+il vulcano,i vulcani:volcano,volcanoes
+la collina,le colline:hill,hills
+l' isola,le isole:island,islands
+il fiume,i fiumi:river,rivers
+il lago,i laghi:lake,lakes
+la cascata,le cascate:cascade,waterfalls
+la penisola,le penisole:peninsula,peninsulas
+il golfo,i golfi:gulf,gulfs
+la pianura,le pianure:plain,plains
+la montagna,le montagne:mountain,mountains
+il vestito,i vestiti:dress,dresses
+il cappello,i cappelli:hat,hats
+l' anello,gli anelli:ring,rings
+il bracciale,i bracciali:bracelet,bracelets
+la camicetta,le camicette:blouse,blouses
+la borsa,le borse:handbag,handbags
+la sciarpa,le sciarpe:scarf,scarves
+la gonna,le gonne:skirt,skirts
+il cappotto,i cappotti:coat,coats
+lo stivale,gli stivali:boot,boots
+il berretto,i berretti:cap,caps
+gli occhiali,i occhiali:glasses,glasses
+la camicia,le camicie:shirt,shirts
+la maglietta,le magliette:t-shirt,t-shirts
+la giacca,le giacche:jacket,jackets
+la cintura,le cinture:belt,belts
+i pantaloni,i pantaloni:trousers,trousers
+i calzini,i calzini:socks,socks
+le scarpe,le scarpe:shoes,shoes
+l' orologio,gli orologi:watch,watches
+il animale,gli animali:animal,animals
+il cane,i cani:dog,dogs
+il gatto,i gatti:cat,cats
+il cavallo,i cavalli:horse,horses
+il maiale,i maiali:pig,pigs
+il coniglio,i conigli:rabbit,rabbits
+il tacchino,i tacchini:turkey,turkeys
+il serpente,i serpenti:snake,snakes
+il cammello,i cammelli:camel,camels
+l' elefante,gli elefanti:elephant,elephants
+il pesce,i pesci:fish,fishes
+la pecora,le pecore:sheep,sheep
+il montone,i montoni:ram,rams
+la mucca,le mucche:cow,cows
+il toro,i tori:bull,bulls
+il criceto,i criceti:hamster,hamsters
+il delfino,i delfini:dolphin,dolphins
+la tartaruga,le tartarughe:turtle,turtles
+il leone,i leoni:lion,lions
+la farfalla,le farfalle:butterfly,butterflies
+l' uccello,gli uccelli:bird,birds
+il ghepardo,i ghepardi:cheetah,cheetahs
+la tigre,le tigri:tiger,tigers
+il topo,i topi:mouse,mice
+il lupo,i lupi:wolf,wolves
+il cervo,i cervi:deer,deer
+l' orso,gli orsi:bear,bears
+lo scoiattolo,gli scoiattoli:squirrel,squirrels
+il cinghiale,i cinghiali:wild boar,wild boars
+la pompa,le pompe:pump,pumps
+la sella,le selle:saddle,saddles
+il parafango,i parafanghi:mudguard,mudguards
+il campanello,i campanelli:bell,bells
+il manubrio,i manubri:handlebars,handlebars
+il freno,i freni:brake,brakes
+la ruota,le ruote:wheel,wheels
+la gomma,le gomme:tyre,tyres
+i pedali,i pedali:pedals,pedals
+la catena,le catene:chain,chains
+la campagna,le campagne:countryside,countrysides
+l' agricoltura,le agricolture:agriculture,agricultures
+la coltivazione,le coltivazioni:cultivation,cultivations
+la quiete,le quiete:calmness,calmnesses
+il terreno,i terreni:ground/soil,grounds/soils
+l' orto,gli orti:vegetable garden,vegetable gardens
+la fattoria,le fattorie:farm,farms
+il fattore,i fattori:farmer,farmers
+la pianta,le piante:plant,plants
+la semina,le semine:seeding,seedings
+il raccolto,i raccolti:harvest,harvests
+la zappa,le zappe:hoe,hoes
+il rastrello,i rastrelli:rake,rakes
+il trattore,i trattori:tractor,tractors
+l' aratro,gli aratri:plough,ploughs
+il contadino,i contadini:farmer,farmers
+il campagnolo,i campagnoli:countryman,countrymen
+l' ortaggio,gli ortaggi:vegetable,vegetables
+la città,le città:city,cities
+il semaforo,i semafori:traffic light,traffic lights
+il pedone,i pedoni:pedestrian,pedestrians
+l' inquinamento,gli inquinamenti:pollution,pollutions
+il monumento,i monumenti:monument,monuments
+la strada,le strade:road,roads
+la via,le vie:street,streets
+l' abitante,gli abitanti:inhabitant,inhabitants
+il turista,i turisti:tourist,tourists
+il sindaco,i sindaci:mayor,mayors
+il comune,i comuni:municipality,municipalities
+la festività,le festività:festival/holiday,festivals/holidays
+l' operaio o l' operaia,gli operai o le operaie:manual labourer,manual labourers
+il commesso o la commessa,i commessi o le commesse:sales assistant,sales assistants
+l' infermiere o l' infermiera,gli infermieri o le infermiere:nurse,nurses
+il farmacista o la farmacista,i farmacisti o le farmaciste:pharmacist,pharmacists
+lo studente o la studentessa,gli studenti o le studentesse:student,students
+il cameriere o la cameriera,i camerieri o le cameriere:waiter,waiters
+l' impiegato o l' impiegata,gli impiegati o le impiegate:office worker,office workers
+il dottore o la dottoressa,i dottori o le dottoresse:doctor,doctors
+il casalingo o la casalinga,i casalinghi o le casalinghe:house husband/housewife,house husbands/housewives
+l' attore o l' attrice,gli attori o le attrici:actor/actress,actors/actresses
+lo scrittore o la scrittrice,gli scrittori o le scrittrici:writer,writers
+il cantante o la cantante,i cantanti o le cantanti:singer,singers
+il malato o la malata,i malati o le malate:sick person,sick people
+la sfilata,le sfilate:parade,parades
+il regalo,i regali:gift/present,gifts/presents
+il panettone,i panettoni:cake,cakes
+la macchina,le macchine:car,cars
+l' autobus,gli autobus:bus,buses
+la bicicletta,le biciclette:bicycle,bicycles
+la bici,le bici:bike,bikes
+il treno,i treni:train,trains
+il motorino,i motorini:scooter,scooters
+il vaporetto,i vaporetti:steamboat,steamboats
+la nave,le navi:ship,ships
+la barca,le barche:boat,boats
+la barca a vela,le barche a vela:sailing boat,sailing boats
+il traghetto,i traghetti:ferryboat,ferryboats
+il monopattino,i monopattini:scooter,scooters
+il corpo,i corpi:body,bodies
+la testa,le teste:head,heads
+la bocca,le bocche:mouth,mouths
+il petto,i petti:chest,chests
+il fianco,i fianchi:side,sides
+la pancia,le pance:stomach,stomachs
+la gamba,le gambe:leg,legs
+il piede,i piedi:foot,feet
+il collo,i colli:neck,necks
+la gola,le gole:throat,throats
+la spalla,le spalle:shoulder,shoulders
+la schiena,le schiene:back,backs
+la serie televisiva,le serie televisive:serial TV,serial TVs
+il canale,i canali:channel,channels
+il telegiornale,i telegiornali:news,news
+il documentario,i documentari:documentary,documentaries
+il varietà,i varietà:variety show,variety shows
+lo yoga,gli yoga:yoga,yogas
+il calcio,i calci:football,footballs
+il pattino,i pattini:skate,skates
+il Natale,i Natali:Christmas,Christmases
+il Capodanno,i Capodanni:New Year's Day,New Year's Days
+il Carnevale,i Carnevali:carnival,carnivals
+la Pasqua,le Pasque:Easter,Easters
+la domenica di Pasqua,le domeniche di Pasqua:Easter Sunday,Easter Sundays
+la Pasquetta,le Pasquette:Easter Monday,Easter Mondays
+l' Ognissanti,gli Ognissanti:All Saints' Day,All Saints' Days
+l' Epifania,le Epifanie:Epiphany,Epiphanies
+il Ferragosto,i Ferragosti:mid-August holiday,mid-August holidays
+La Festa della liberazione,le Feste della liberazione:Liberation Day,Liberation Days
+La Festa della Repubblica,le Feste della Repubblica:Republic Day,Republic Days
+La Festa dei lavoratori,le Feste dei lavoratori:Workers' Day,Workers' Days
+l' Immacolata Concezione,le Immacolate Concezioni:The Immaculate Conception,The Immaculate Conceptions
+il Giorno dell' indipendenza,i Giorni dell' indipendenza:Independence Day,Independence Days
+il Giorno del ringraziamento,i Giorni del ringraziamento:Thanksgiving Day,Thanksgiving Days
+l' albero di Natale,gli alberi di Natale:Christmas tree,Christmas trees
+il fuocho d'artificio,i fuochi d'artificio:fireworks,fireworks
+il singolare,i singolari:singular,singulars
+il plurale,i plurali:plural,plural
+il telecomando,i telecomandi:remote control,remote controls
+l' antenna parabolica,le antenne paraboliche:TV aerial,TV aerials
+la conoscenza,le conoscenze:knowledge,knowledges
+il barista,i baristi:barman,barmen
+la barista,le bariste:barman,barmens
+la pubblicità,le pubblicità:commercial,commercials
+lo spot,gli spot:commercial,commercials
+l' episodio,gli episodi:episode,episodes
+la puntata,le puntate:episode,episodes
+il conduttore,i conduttori:showman,showmen
+il colore,i colori:colors
+***ADJECTIVES
+piatto:flat
+piccolo:small
+pulito:neat
+grande:big
+scuri:dark
+chiari:bright
+bianco:white
+giallo:yellow
+arancione:orange
+rosso:red
+rosa:pink
+viola:violet
+azzurro:sky-blue
+blu:dark blue
+verde:green
+marrone:brown
+nero:black
+castani:brown
+biondi:blond
+neri:black
+blu:blue
+azzurri:sky-blue
+verdi:green
+grigi:grey
+lunghi:long
+corti:short
+mossi:wavy
+lisci:straight
+ricci:curly
+calvo:bald
+rasato:shaved
+alto:tall
+basso:short
+grasso:fat
+magro:thin
+primo:first
+secondo:second
+terzo:third
+quarto:fourth
+quinto:fifth
+sesto:sixth
+settimo:seventh
+ottavo:eighth
+nono:ninth
+decimo:tenth
+intero:whole
+magro:lean
+legno:wooden
+amaro:bitter
+dolce:sweet
+salato:salty
+dolce:sweet
+gustoso:tasty
+disgustoso:disgusting
+calorico:fattening
+dietetico:low-calory
+cotto:cooked
+crudo:raw
+condito:dressed salad
+scondito:undressed salad
+leggero:light
+pesante:heavy
+saporito:tasty
+insipido:tasteless
+al dente:firm
+scotto:overcooked
+aperto:open minded
+vanitoso:vain
+divertente:funny
+simpatico:sympathic
+interessante:interesting
+carino:pretty / cute
+timido:shy
+sensibile:sensitive
+intelligente:intelligent
+attraente:attractive
+noioso:boring
+bruttino:ugly
+severo:strict
+loquace:talkative
+al centro:in the middle of
+di fronte a:opposite to
+di fianco a:next to
+in fondo a:at the end of/at the bottom of
+vicino a:near to
+all' angolo con:on the corner
+lontano da:far from
+dietro a:behind
+davanti a:in front of
+sopra:over
+sotto:under
+fra...e...:between
+a sinistra:on the left
+a destra:on the right
+fino a:up to/till
+sempre:always
+spesso:often
+qualche volta:sometimes
+non...mai:never
+***** PHARESES
+mal di pancia:stomach ache
+mal di testa:head ache
+mal di gola:sore throat
+mal di denti:toothache
+mal di stomaco:stomachache
+mal di orecchie:earache
+mal di schiena:backache
+mi fanno male le gambe:my legs ache
+un etto = 100 grammi grams
+due etti e mezzo = 250 grammi grams
+cinque panini:five sandwiches
+un pacco di riso:a pack of rice
+quattro bistecche di maiale:4 porksteaks
+due etti di carne macinata:200 grams of minced meat
+due chili di ...:2 kilos of ...
+un chilo di ...:1 kilo of ...
+mezzo chilo di ...:0.5 kilo of ...
+un vasetto di ...:a jar of ...
+un pezzo di ...:piece of ...
+un litro di ...:1 litre of ...
+Luogo di lavoro:Workplace
+C'è il sole:It's sunny
+C'è il vento:It's windy
+C'è la nebbia:It's foggy
+È nuvoloso:It's cloudy
+È caldo:It's hot
+È freddo:It's cold
+Tempo libero:Free Time
+Io sono malato/a:I'm sick
+da portare via:take away
+da asporto:take away
+una coppia:couple
+il figlio unico:only male child
+la figlia unica:only female child
+il figlio adottivo:adopted son
+la figlia adottiva:adopted daughter
+andare a piedi:to go on foot
+il pronto soccorso:emergency room
+lo studio privato:private practice
+il negozio di abbigliamento:clothes shop
+il negozio di calzature:shoe shop
+fare la doccia:take a shower
+fare colazione:have breakfast
+lavarsi i denti:brush your teeth
+cominciare a lavorare:begin working
+fare una pausa:have a break
+finire di lavorare:finish working
+tornare a casa:go back home
+uscire con gli amici:go out with friends
+guardare la TV:watch TV
+andare a letto:go to bed
+dopo:after
+esprimere un'opinione:Expressing opinions
+A mio parere:In my opinion
+Io penso che:I think that
+Sono d'accordo.:I agree.
+Non sono d'accordo.:I don't agree/ I disagree
+Credo che...:I believe that...
+Sono convinto/a che...:I am convinced that...
+Trovo che...:I find that...
+Per me...:For me...
+Secondo me...:In my opinion...
+Vieni con me...?:would you come with me...
+Potremmo andare...:we could go to...
+Vuoi...?:do you want...
+Vorresti...?:would you like to...
+Hai voglia di...?:do you fancy...
+Andiamo a...?:why don't we go to...
+Che ne dici di...?:what do you think about...?
+Ti va di...?:do you fancy...
+buona idea!:good idea!
+sì,volentieri:yes,I'd love to
+Mi dispiace,ma...:I'm sorry,but...
+Veramente non mi va:I don't really fancy it
+
+
+
+
+oppure or
+riepilogo summary
+i romanzi italiani 
+durante during
+segue follows
+sapra gia you already know
+rubrica letterarria literary column 
+siccome since
+comunque however
+mettere put
+invece instead
+racconta tells
+protagonista  protagonist
+divertente fun
+andava went
+salvagardane safeguard 
+sostanza substance
+deluso disappointed
+eppure and yet
+tantissimo  so much
+raccunti stories
+colpito struck
+venturo future
+pazzia madness
+appassionato passionate 
+brodo broth
+piante plants
+arrendere surrender
+fatemi let me
